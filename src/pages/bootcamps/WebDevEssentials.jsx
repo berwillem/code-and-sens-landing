@@ -1,0 +1,408 @@
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+import i18n from '../../i18n/i18n';
+
+// SVG Icons
+const CodeIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline>
+  </svg>
+);
+
+const RocketIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
+    <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
+    <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+    <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
+  </svg>
+);
+
+const ShieldIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+  </svg>
+);
+
+const StarIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="text-yellow-400">
+    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+  </svg>
+);
+
+const CheckIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <polyline points="20 6 9 17 4 12"></polyline>
+  </svg>
+);
+
+const MODULE_WEEKS = [
+  {
+    week: 'Weeks 1–2',
+    title: 'Web Foundations',
+    topics: ['HTML5 Semantics & Accessibility', 'CSS Grid & Flexbox Mastery', 'Responsive Design Principles', 'Browser DevTools'],
+  },
+  {
+    week: 'Weeks 3–5',
+    title: 'JavaScript & React',
+    topics: ['Modern ES6+ JavaScript', 'React Fundamentals & Hooks', 'State Management with Context', 'React Router & SPAs'],
+  },
+  {
+    week: 'Weeks 6–8',
+    title: 'Full-Stack & Backend',
+    topics: ['Node.js & Express APIs', 'Database Design (SQL + NoSQL)', 'Authentication & Security', 'REST API Development'],
+  },
+  {
+    week: 'Weeks 9–12',
+    title: 'Projects & Career',
+    topics: ['Capstone Project Build', 'Git & GitHub Workflow', 'Portfolio Development', 'Technical Interview Prep'],
+  },
+];
+
+const TESTIMONIALS = [
+  {
+    name: 'Sarah M.',
+    role: 'Frontend Developer @ Djezzy',
+    quote: 'Within 3 months of graduating I received two offers. The curriculum is tough but exactly what you need to prepare for the real world.',
+    rating: 5,
+    avatar: 'SM',
+  },
+  {
+    name: 'David K.',
+    role: 'Software Engineer @ Sonatrach Digital',
+    quote: 'The instructors don\'t just teach code, they teach you how to think like an engineer. Best investment I ever made.',
+    rating: 5,
+    avatar: 'DK',
+  },
+  {
+    name: 'Amina B.',
+    role: 'Fullstack Developer, Freelance',
+    quote: 'The coworking space and incubator access opened doors I didn\'t know existed. I launched my first SaaS product 6 months after bootcamp.',
+    rating: 5,
+    avatar: 'AB',
+  },
+];
+
+const WebDevEssentials = () => {
+  const { t } = useTranslation();
+  const isRtl = i18n.dir(i18n.language) === 'rtl';
+  const primaryColor = '#294CFF';
+  const pageStyle = { '--page-primary': primaryColor };
+
+  return (
+    <div className="flex flex-col font-sans" style={pageStyle}>
+
+      {/* ─── 1. HERO ─────────────────────────────────────────────────────── */}
+      <section className="w-full px-8 lg:px-16 py-4 flex flex-col lg:flex-row items-center justify-between gap-6 min-h-[calc(100vh-5rem)]">
+
+        {/* Left: Text */}
+        <div className="flex-1 space-y-5" style={{ textAlign: isRtl ? 'right' : 'left' }}>
+          <div
+            className="inline-flex items-center gap-2 bg-[#294CFF]/10 text-[#294CFF] px-4 py-1.5 rounded-full text-xs font-semibold border border-[#294CFF]/20"
+            style={{ flexDirection: isRtl ? 'row-reverse' : 'row' }}
+          >
+            <span className="w-2 h-2 rounded-full bg-[#294CFF] animate-pulse"></span>
+            {t('bootcampTag')}
+          </div>
+
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight font-heading">
+            {t('heroTitle1')}{' '}
+            <span className="text-[#294CFF]">{t('heroHighlight')}</span>
+            <br />{t('heroTitle2')}
+          </h1>
+
+          <p className="text-base text-slate-500 max-w-lg leading-relaxed">
+            {t('heroSubtitle')}
+          </p>
+
+          <div
+            className="flex flex-wrap gap-3"
+            style={{ justifyContent: isRtl ? 'flex-end' : 'flex-start' }}
+          >
+            <button className="btn-primary text-sm px-7 py-3 shadow-lg" style={{ boxShadow: '0 8px 32px #294CFF33' }}>
+              {t('heroCta1')}
+            </button>
+            <button className="btn-secondary text-sm px-7 py-3">
+              {t('heroCta2')}
+            </button>
+          </div>
+
+          <div
+            className="flex items-center gap-3 text-slate-500 text-xs pt-1"
+            style={{ justifyContent: isRtl ? 'flex-end' : 'flex-start', flexDirection: isRtl ? 'row-reverse' : 'row' }}
+          >
+            <div className="flex gap-0.5">
+              {[1,2,3,4,5].map(i => <StarIcon key={i} />)}
+            </div>
+            <span><strong className="text-slate-800">4.9</strong> {t('heroRating')}</span>
+          </div>
+        </div>
+
+        {/* Right: Code Mockup — always LTR regardless of language */}
+        <div className="flex-1 w-full max-w-md relative group" dir="ltr">
+          <div
+            className="absolute -inset-1 rounded-2xl blur-xl opacity-25 group-hover:opacity-40 transition duration-700"
+            style={{ background: 'linear-gradient(135deg, #294CFF, #00c6ff)' }}
+          ></div>
+          <div className="relative bg-[#0d1117] rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10">
+            <div className="h-9 bg-[#161b22] border-b border-white/5 flex items-center px-4 gap-2">
+              <div className="w-3 h-3 rounded-full bg-[#ff5f57]"></div>
+              <div className="w-3 h-3 rounded-full bg-[#febc2e]"></div>
+              <div className="w-3 h-3 rounded-full bg-[#28c840]"></div>
+              <span className="ml-3 text-xs text-slate-500 font-sans">developer.jsx</span>
+            </div>
+            <div className="p-6 text-sm text-slate-300 leading-loose font-sans text-left">
+              <span className="text-pink-400 font-bold">import</span>{' '}
+              <span className="text-teal-300">React</span>{' '}
+              <span className="text-pink-400 font-bold">from</span>{' '}
+              <span className="text-orange-300">'react'</span>;
+              <br /><br />
+              <span className="text-pink-400 font-bold">const</span>{' '}
+              <span className="text-blue-300 font-bold">Developer</span>{' '}
+              <span className="text-pink-400 font-bold">= () =&gt;</span> {'{'}
+              <br />
+              &nbsp;&nbsp;<span className="text-pink-400 font-bold">return</span> (
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span className="text-indigo-400">Career</span>{' '}
+              <span className="text-slate-400">status</span>=
+              <span className="text-orange-300">"launched"</span> /&gt;
+              <br />
+              &nbsp;&nbsp;);
+              <br />
+              {'}'};
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── 2. EVERYTHING YOU NEED ─────────────────────────────────────── */}
+      <section className="bg-slate-50 py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 space-y-4">
+            <h2 className="text-4xl lg:text-5xl font-bold font-heading">{t('featuresTitle')}</h2>
+            <p className="text-lg text-slate-500 max-w-2xl mx-auto">
+              {t('featuresSubtitle')}
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-8">
+            {/* Card 1 */}
+            <div className="card-clickable bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-lg flex flex-col group">
+              <div className="h-52 flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-[#294CFF]/10 to-[#294CFF]/5">
+                <div className="flex gap-5 items-center">
+                  <div className="w-16 h-16 rounded-2xl bg-[#61DAFB]/20 border border-[#61DAFB]/30 flex items-center justify-center text-[#294CFF] shadow-md">
+                    <CodeIcon />
+                  </div>
+                  <div className="w-14 h-14 rounded-xl bg-[#F05032]/10 border border-[#F05032]/30 flex items-center justify-center text-xs font-bold font-heading text-[#F05032]">
+                    GIT
+                  </div>
+                  <div className="w-14 h-14 rounded-xl bg-[#68A063]/10 border border-[#68A063]/30 flex items-center justify-center text-xs font-bold font-heading text-[#68A063]">
+                    NODE
+                  </div>
+                </div>
+              </div>
+              <div className="p-8 flex-1 flex flex-col">
+                <h3 className="text-2xl font-bold font-heading mb-3 group-hover:text-[#294CFF] transition-colors">{t('card1Title')}</h3>
+                <p className="text-slate-500 leading-relaxed flex-1 mb-6">{t('card1Desc')}</p>
+                <button className="btn-secondary w-full text-sm uppercase tracking-wider">{t('card1Cta')}</button>
+              </div>
+            </div>
+
+            {/* Card 2 */}
+            <div className="card-clickable bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-lg flex flex-col group">
+              <div className="h-52 flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-cyan-50 to-sky-50">
+                <div className="text-center">
+                  <div className="w-20 h-20 rounded-2xl bg-cyan-500/10 border border-cyan-400/30 flex items-center justify-center text-cyan-600 mx-auto shadow-md group-hover:scale-110 transition-transform duration-300">
+                    <RocketIcon />
+                  </div>
+                  <p className="text-xs text-slate-400 mt-3 font-sans">Coworking + Incubator</p>
+                </div>
+              </div>
+              <div className="p-8 flex-1 flex flex-col">
+                <h3 className="text-2xl font-bold font-heading mb-3 group-hover:text-cyan-600 transition-colors">{t('card2Title')}</h3>
+                <p className="text-slate-500 leading-relaxed flex-1 mb-6">{t('card2Desc')}</p>
+                <button className="btn-secondary w-full text-sm uppercase tracking-wider">{t('card2Cta')}</button>
+              </div>
+            </div>
+
+            {/* Card 3 */}
+            <div className="card-clickable bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-lg flex flex-col group">
+              <div className="h-52 flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-indigo-50 to-violet-50">
+                <div className="text-center">
+                  <div className="w-20 h-20 rounded-full bg-indigo-500/10 border border-indigo-400/30 flex items-center justify-center text-indigo-600 mx-auto shadow-md group-hover:scale-110 transition-transform duration-300">
+                    <ShieldIcon />
+                  </div>
+                  <p className="text-xs text-slate-400 mt-3 font-sans">Recognized Certifications</p>
+                </div>
+              </div>
+              <div className="p-8 flex-1 flex flex-col">
+                <h3 className="text-2xl font-bold font-heading mb-3 group-hover:text-indigo-600 transition-colors">{t('card3Title')}</h3>
+                <p className="text-slate-500 leading-relaxed flex-1 mb-6">{t('card3Desc')}</p>
+                <button className="btn-secondary w-full text-sm uppercase tracking-wider">{t('card3Cta')}</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── 3. CURRICULUM ───────────────────────────────────────────────── */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 space-y-4">
+            <h2 className="text-4xl lg:text-5xl font-bold font-heading">{t('curriculumTitle')}</h2>
+            <p className="text-lg text-slate-500 max-w-2xl mx-auto">
+              {t('curriculumSubtitle')}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {MODULE_WEEKS.map((mod, i) => (
+              <div
+                key={i}
+                className="group relative bg-white rounded-2xl border border-slate-100 p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+              >
+                {/* Accent bar — switches sides for RTL */}
+                <div
+                  className="absolute top-0 bottom-0 w-1 rounded-2xl"
+                  style={{ background: primaryColor, [isRtl ? 'right' : 'left']: 0 }}
+                ></div>
+                <div className={isRtl ? 'pr-4 text-right' : 'pl-4'}>
+                  <span className="text-xs font-semibold tracking-widest text-[#294CFF] uppercase">{mod.week}</span>
+                  <h3 className="text-xl font-bold font-heading mt-1 mb-4">{mod.title}</h3>
+                  <ul className="space-y-2">
+                    {mod.topics.map((topic, j) => (
+                      <li key={j} className={`flex items-center gap-3 text-slate-500 text-sm ${isRtl ? 'flex-row-reverse' : ''}`}>
+                        <span className="text-[#294CFF] flex-shrink-0"><CheckIcon /></span>
+                        {topic}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <button className="btn-primary px-10 py-4 text-base">
+              {t('curriculumCta')}
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── 4. TESTIMONIALS ─────────────────────────────────────────────── */}
+      <section
+        className="py-24 relative overflow-hidden"
+        style={{ background: `linear-gradient(135deg, #294CFF 0%, #1a35cc 100%)` }}
+      >
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full opacity-10 -translate-y-1/2 translate-x-1/2"
+          style={{ background: 'radial-gradient(circle, white 0%, transparent 70%)' }}></div>
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full opacity-10 translate-y-1/2 -translate-x-1/2"
+          style={{ background: 'radial-gradient(circle, white 0%, transparent 70%)' }}></div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 space-y-4">
+            <h2 className="text-4xl lg:text-5xl font-bold font-heading text-white">{t('testimonialsTitle')}</h2>
+            <div className="flex items-center justify-center gap-2 text-white/80">
+              <div className="flex">
+                {[1,2,3,4,5].map(i => <StarIcon key={i} />)}
+              </div>
+              <span className="text-lg font-semibold">4.9</span>
+              <span className="text-white/50">· 2,450+ graduates</span>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {TESTIMONIALS.map((testimonial, i) => (
+              <div
+                key={i}
+                className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:-translate-y-1"
+              >
+                <div className="flex items-center gap-1 mb-5">
+                  {[...Array(testimonial.rating)].map((_, j) => <StarIcon key={j} />)}
+                </div>
+                <p className="text-white/90 text-sm leading-relaxed mb-7 italic">"{testimonial.quote}"</p>
+                <div className="flex items-center gap-3">
+                  <div
+                    className="w-10 h-10 rounded-full flex items-center justify-center text-white text-xs font-bold font-heading flex-shrink-0"
+                    style={{ background: 'rgba(255,255,255,0.2)' }}
+                  >
+                    {testimonial.avatar}
+                  </div>
+                  <div>
+                    <div className="text-white font-semibold text-sm">{testimonial.name}</div>
+                    <div className="text-white/60 text-xs">{testimonial.role}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── 5. CONTACT FORM ─────────────────────────────────────────────── */}
+      <section className="py-24 bg-slate-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row border border-slate-100">
+            {/* Left info panel */}
+            <div
+              className="md:w-2/5 p-10 md:p-14 flex flex-col justify-center"
+              style={{ background: `linear-gradient(135deg, #294CFF 0%, #1a35cc 100%)` }}
+            >
+              <h2 className="text-3xl lg:text-4xl font-bold font-heading text-white leading-tight mb-5">
+                {t('contactTitle')}
+              </h2>
+              <p className="text-white/80 text-base leading-relaxed mb-8">
+                {t('contactSubtitle')}
+              </p>
+              <ul className="space-y-3">
+                {[t('contactCheck1'), t('contactCheck2'), t('contactCheck3')].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-white/90 text-sm">
+                    <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                      <CheckIcon />
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Right form — always LTR layout */}
+            <div className="md:w-3/5 p-10 md:p-14">
+              <h3 className="text-xl font-bold font-heading mb-8 text-slate-800">{t('formTitle')}</h3>
+              <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+                <div className="space-y-1.5">
+                  <label htmlFor="name" className="text-sm font-semibold text-slate-600">{t('formName')}</label>
+                  <input type="text" id="name" className="input w-full" placeholder="Ahmed Benali" />
+                </div>
+                <div className="space-y-1.5">
+                  <label htmlFor="email" className="text-sm font-semibold text-slate-600">{t('formEmail')}</label>
+                  <input type="email" id="email" className="input w-full" placeholder="ahmed@example.com" />
+                </div>
+                <div className="space-y-1.5">
+                  <label htmlFor="phone" className="text-sm font-semibold text-slate-600">{t('formPhone')}</label>
+                  <div className="flex" dir="ltr">
+                    <span className="inline-flex items-center px-4 rounded-l-lg border border-r-0 border-slate-200 bg-slate-50 text-slate-500 text-sm font-sans flex-shrink-0">
+                      +213
+                    </span>
+                    <input type="tel" id="phone" className="input rounded-l-none w-full" placeholder="555 123 456" />
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  className="btn-primary w-full py-4 text-base mt-2 shadow-lg"
+                  style={{ boxShadow: '0 8px 32px #294CFF33' }}
+                >
+                  {t('formSubmit')}
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  );
+};
+
+export default WebDevEssentials;
