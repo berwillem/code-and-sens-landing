@@ -43,5 +43,119 @@
   "footerFindUs": "Find Us",
   "footerOpenMaps": "Open in Google Maps →",
   "footerPrivacy": "Privacy Policy",
-  "footerTerms": "Terms of Service"
+  "footerTerms": "Terms of Service",
+  "freeAppointmentModalTitle": "Free Appointment with our Educational Consultants",
+  "curriculumModules": [
+    {
+      "week": "Weeks 1–3",
+      "title": "Web Foundations & Git",
+      "topics": [
+        "Understanding how the Internet and Web work",
+        "Introduction to servers, browsers, and HTTP",
+        "HTML page structure and essential tags",
+        "Introduction to versioning, Git, and GitHub"
+      ]
+    },
+    {
+      "week": "Weeks 4–6",
+      "title": "Advanced CSS & Animations",
+      "topics": [
+        "The Box Model and CSS Selectors",
+        "Advanced CSS Layouts (Flexbox & CSS Grid)",
+        "Creating responsive web pages seamlessly",
+        "Tailwind CSS, animations, and transitions"
+      ]
+    },
+    {
+      "week": "Weeks 7–9",
+      "title": "Algorithms & JavaScript Logic",
+      "topics": [
+        "Understanding algorithms and programming logic",
+        "Variables, loops, and conditions in JavaScript",
+        "Creating and using complex functions",
+        "Manipulating arrays and traversing objects"
+      ]
+    },
+    {
+      "week": "Weeks 10–12",
+      "title": "The DOM & Final Project",
+      "topics": [
+        "Understanding and manipulating the DOM",
+        "Advanced user events and form validation",
+        "Designing a complete web project",
+        "Building and presenting a functional website"
+      ]
+    }
+  ],
+  "uiuxHeroTitle1": "Master Digital",
+  "uiuxHeroHighlight": "Experiences",
+  "uiuxHeroTitle2": "& Product Design",
+  "uiuxHeroSubtitle": "Go from absolute beginner to a confident UI/UX Designer in 12 weeks. Learn wireframing, prototyping, user research, and Figma mastery.",
+  "uiuxFeaturesTitle": "Everything You Need to Design Like a Pro",
+  "uiuxFeaturesSubtitle": "A creative curriculum built purely to construct beautiful, user-centric interfaces.",
+  "uiuxCard1Title": "Figma Mastery",
+  "uiuxCard1Desc": "Master auto-layout, components, and variables like a true professional.",
+  "uiuxCard1Subtitle": "Industry Standard",
+  "uiuxCard2Title": "User Research",
+  "uiuxCard2Desc": "Understand your users, build personas, and master the art of UX interviews to make data-driven design choices.",
+  "uiuxCard3Title": "Prototyping",
+  "uiuxCard3Desc": "Breathe life into static screens with advanced micro-interactions.",
+  "uiuxCard4Title": "Design Systems",
+  "uiuxCard4Desc": "Build scalable, consistent UI kits utilized by top-tier product teams.",
+  "uiuxCurriculumTitle": "12 Weeks to Product Design",
+  "uiuxCurriculumSubtitle": "An intensive, hands-on syllabus designed to get you hired as a UI/UX Designer.",
+  "uiuxCurriculumCta": "Download Detailed Syllabus",
+  "uiuxCurriculumModules": [
+    {
+      "week": "Weeks 1–3",
+      "title": "Design Fundamentals & UX Intro",
+      "topics": [
+        "Color theory, typography, and spacing",
+        "Introduction to UX laws and heuristics",
+        "Wireframing basics and user flows",
+        "Mastering Figma basics and interface navigation"
+      ]
+    },
+    {
+      "week": "Weeks 4–6",
+      "title": "Advanced UI & Design Systems",
+      "topics": [
+        "Figma Auto-Layout and complex components",
+        "Creating comprehensive Design Systems",
+        "Variables, tokens, and dark mode design",
+        "Responsive design and mobile-first approach"
+      ]
+    },
+    {
+      "week": "Weeks 7–9",
+      "title": "User Research & Testing",
+      "topics": [
+        "Conducting user interviews & surveys",
+        "Building user personas & journey maps",
+        "A/B testing and data-driven design",
+        "Usability testing best practices"
+      ]
+    },
+    {
+      "week": "Weeks 10–12",
+      "title": "Prototyping & Portfolio Build",
+      "topics": [
+        "Advanced Figma prototyping and animations",
+        "Developer handoff workflows",
+        "Building your definitive UX Case Study",
+        "Portfolio creation and interview prep"
+      ]
+    }
+  ],
+  "uiuxWorkTitle": "Our Students' Work",
+  "uiuxWorkSubtitle": "Explore the incredible interfaces built by our recent graduates.",
+  "uiuxTestimonial1Quote": "The mentorship in this UI/UX bootcamp elevated my design thinking. I landed a role as a Product Designer right after graduation.",
+  "uiuxTestimonial1Name": "Yasmine K.",
+  "uiuxTestimonial1Role": "Product Designer @ Yassir",
+  "uiuxTestimonial2Quote": "I finally understand how to build robust Design Systems. Figma went from feeling intimidating to feeling like home.",
+  "uiuxTestimonial2Name": "Amine S.",
+  "uiuxTestimonial2Role": "UI/UX Designer Freelance",
+  "uiuxTestimonial3Quote": "The focus on actual User Research, not just making screens look pretty, was the game changer for my career path.",
+  "uiuxTestimonial3Name": "Lina T.",
+  "uiuxTestimonial3Role": "Junior UX Researcher"
 }

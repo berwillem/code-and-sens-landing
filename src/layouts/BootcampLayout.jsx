@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Navbar from '../components/Navbar';
+import ContactModal from '../components/ContactModal';
 
 // Route-to-primary-color map (mirrors Navbar)
 const routePrimaryColors = {
@@ -8,16 +10,31 @@ const routePrimaryColors = {
   '/bootcamps/ecommerce':                  '#EAB308',
   '/bootcamps/generative-ai-automation':   '#9333EA',
   '/bootcamps/power-bi':                   '#2563EB',
-  '/bootcamps/ui-ux-design':               '#EC4899',
+  '/bootcamps/ui-ux-design':               '#03BF1F',
   '/bootcamps/cybersecurity-bootcamp':     '#EF4444',
   '/bootcamps/cybersecurity-introduction': '#EF4444',
 };
 
 const BootcampLayout = () => {
+  const { t } = useTranslation();
   const location = useLocation();
   const primaryColor = routePrimaryColors[location.pathname] || '#294CFF';
   const [phone, setPhone] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  
+  // Modal state
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalTitle, setModalTitle] = useState('');
+
+  const handleOpenModal = (title = '') => {
+    setModalTitle(title);
+    setIsModalOpen(true);
+  };
+  
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setTimeout(() => setModalTitle(''), 300);
+  };
 
   const handlePhoneSubmit = (e) => {
     e.preventDefault();
@@ -26,12 +43,20 @@ const BootcampLayout = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-white text-slate-900 font-sans">
-      <Navbar />
+      <Navbar onOpenModal={handleOpenModal} />
 
       {/* Main Content */}
       <main className="flex-1 w-full pt-20 pb-0">
-        <Outlet />
+        <Outlet context={{ onOpenModal: handleOpenModal }} />
       </main>
+
+      {/* Global Contact Modal */}
+      <ContactModal 
+        isOpen={isModalOpen} 
+        onClose={handleCloseModal} 
+        primaryColor={primaryColor} 
+        customTitle={modalTitle} 
+      />
 
       {/* ─── FOOTER ───────────────────────────────────────────────────── */}
       <footer style={{ background: primaryColor }}>
@@ -54,23 +79,25 @@ const BootcampLayout = () => {
             {!submitted ? (
               <form onSubmit={handlePhoneSubmit} className="space-y-2">
                 <p className="text-white text-sm font-semibold">Get a callback in 24h:</p>
-                <div className="flex overflow-hidden rounded-lg shadow-lg">
-                  <span className="inline-flex items-center px-3 bg-white/20 text-white/80 text-sm font-sans border-r border-white/20 flex-shrink-0">
-                    +213
-                  </span>
-                  <input
-                    type="tel"
-                    value={phone}
-                    onChange={e => setPhone(e.target.value)}
-                    placeholder="555 123 456"
-                    className="flex-1 px-3 py-2.5 bg-white/10 placeholder-white/40 text-white text-sm outline-none focus:bg-white/20 transition-colors"
-                  />
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-0 mt-1">
+                  <div className="flex overflow-hidden rounded-xl sm:rounded-r-none shadow-sm bg-white/10 flex-1 border border-white/10">
+                    <span className="inline-flex items-center px-4 md:px-3 text-white/80 text-sm font-sans border-r border-white/20 flex-shrink-0">
+                      +213
+                    </span>
+                    <input
+                      type="tel"
+                      value={phone}
+                      onChange={e => setPhone(e.target.value)}
+                      placeholder="555 123 456"
+                      className="w-full px-4 md:px-3 py-3 md:py-2.5 bg-transparent placeholder-white/30 text-white text-base md:text-sm outline-none focus:bg-white/5 transition-colors"
+                    />
+                  </div>
                   <button
                     type="submit"
-                    className="px-4 py-2.5 bg-white text-sm font-bold flex-shrink-0 transition-opacity hover:opacity-90"
+                    className="w-full sm:w-auto px-6 py-3 md:py-2.5 bg-white rounded-xl sm:rounded-l-none text-base md:text-sm font-bold flex items-center justify-center transition-opacity hover:opacity-90 shadow-sm"
                     style={{ color: primaryColor }}
                   >
-                    Send
+                    {t('footerCallbackBtn', 'Send')}
                   </button>
                 </div>
               </form>

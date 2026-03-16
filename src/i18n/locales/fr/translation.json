@@ -43,5 +43,119 @@
   "footerFindUs": "Nous trouver",
   "footerOpenMaps": "Ouvrir dans Google Maps →",
   "footerPrivacy": "Politique de confidentialité",
-  "footerTerms": "Conditions d'utilisation"
+  "footerTerms": "Conditions d'utilisation",
+  "freeAppointmentModalTitle": "Rendez-vous gratuit avec nos conseillers pédagogiques",
+  "curriculumModules": [
+    {
+      "week": "Semaines 1–3",
+      "title": "Fondamentaux du Web & Git",
+      "topics": [
+        "Comprendre le fonctionnement d’Internet et du Web",
+        "Introduction aux serveurs, navigateurs et HTTP",
+        "Structure d'une page HTML et balises essentielles",
+        "Introduction au versioning, Git et GitHub"
+      ]
+    },
+    {
+      "week": "Semaines 4–6",
+      "title": "CSS Avancé & Animations",
+      "topics": [
+        "Le Modèle de Boîte (Box Model) et Sélecteurs CSS",
+        "Layouts avancés (Flexbox & CSS Grid)",
+        "Création de pages responsive",
+        "Tailwind CSS, animations et transitions"
+      ]
+    },
+    {
+      "week": "Semaines 7–9",
+      "title": "Algorithmique & Logique JS",
+      "topics": [
+        "Comprendre la logique de programmation & algorithmes",
+        "Variables, boucles et conditions en JavaScript",
+        "Création et utilisation de fonctions",
+        "Manipulation de tableaux et objets"
+      ]
+    },
+    {
+      "week": "Semaines 10–12",
+      "title": "Le DOM & Projet Final",
+      "topics": [
+        "Comprendre et manipuler le DOM avec JS",
+        "Gestion des événements et validation de formulaires",
+        "Conception d’un projet web complet",
+        "Création et présentation d'un site web fonctionnel"
+      ]
+    }
+  ],
+  "uiuxHeroTitle1": "Maîtrisez l'Expérience",
+  "uiuxHeroHighlight": "Utilisateur",
+  "uiuxHeroTitle2": "& le Product Design",
+  "uiuxHeroSubtitle": "Passez de grand débutant à Designer UI/UX confiant en 12 semaines. Apprenez le wireframing, le prototypage, la recherche utilisateur et la maîtrise absolue de Figma.",
+  "uiuxFeaturesTitle": "Tout ce qu'il vous faut pour concevoir comme un Pro",
+  "uiuxFeaturesSubtitle": "Un programme créatif conçu pour construire des interfaces magnifiques centrées sur l'utilisateur.",
+  "uiuxCard1Title": "Maîtrise de Figma",
+  "uiuxCard1Desc": "Maîtrisez l'auto-layout, les composants et les variables comme un vrai professionnel.",
+  "uiuxCard1Subtitle": "Standard de l'Industrie",
+  "uiuxCard2Title": "Recherche Utilisateur",
+  "uiuxCard2Desc": "Comprenez vos utilisateurs, créez des personas et maîtrisez les interviews UX pour des choix data-driven.",
+  "uiuxCard3Title": "Prototypage",
+  "uiuxCard3Desc": "Donnez vie à vos maquettes statiques avec des micro-interactions avancées.",
+  "uiuxCard4Title": "Design Systems",
+  "uiuxCard4Desc": "Construisez des UI kits scalables et cohérents utilisés par les meilleures équipes produit.",
+  "uiuxCurriculumTitle": "12 Semaines vers le Product Design",
+  "uiuxCurriculumSubtitle": "Un programme intensif et pratique conçu pour vous faire recruter en tant que Designer UI/UX.",
+  "uiuxCurriculumCta": "Télécharger le programme détaillé",
+  "uiuxCurriculumModules": [
+    {
+      "week": "Semaines 1–3",
+      "title": "Fondamentaux du Design & Intro UX",
+      "topics": [
+        "Théorie des couleurs, typographie et espacement",
+        "Introduction aux lois de l'UX et aux heuristiques",
+        "Bases du Wireframing et parcours utilisateurs",
+        "Bases de Figma et navigation dans l'interface"
+      ]
+    },
+    {
+      "week": "Semaines 4–6",
+      "title": "UI Avancée & Design Systems",
+      "topics": [
+        "Auto-Layout Figma et composants complexes",
+        "Création de Design Systems complets",
+        "Variables, tokens et design en mode sombre",
+        "Responsive design et approche mobile-first"
+      ]
+    },
+    {
+      "week": "Semaines 7–9",
+      "title": "Recherche Utilisateur & Tests",
+      "topics": [
+        "Mener des interviews utilisateurs & sondages",
+        "Création de personas & journey maps",
+        "A/B testing et design axé sur la donnée",
+        "Meilleures pratiques des tests d'utilisabilité"
+      ]
+    },
+    {
+      "week": "Semaines 10–12",
+      "title": "Prototypage & Création de Portfolio",
+      "topics": [
+        "Prototypage et animations Figma avancées",
+        "Workflows de transfert (handoff) développeur",
+        "Rédaction de votre Étude de Cas UX définitive",
+        "Création du portfolio et préparation aux entretiens"
+      ]
+    }
+  ],
+  "uiuxWorkTitle": "Travaux de nos étudiants",
+  "uiuxWorkSubtitle": "Découvrez les interfaces incroyables conçues par nos récents diplômés.",
+  "uiuxTestimonial1Quote": "Le mentorat dans ce bootcamp UI/UX a élevé ma façon de penser le design. J'ai décroché un poste de Product Designer juste après la remise des diplômes.",
+  "uiuxTestimonial1Name": "Yasmine K.",
+  "uiuxTestimonial1Role": "Product Designer @ Yassir",
+  "uiuxTestimonial2Quote": "J'ai enfin compris comment construire de solides Design Systems. Figma est passé d'intimidant à ma propre maison.",
+  "uiuxTestimonial2Name": "Amine S.",
+  "uiuxTestimonial2Role": "Designer UI/UX Freelance",
+  "uiuxTestimonial3Quote": "La concentration sur la véritable Recherche Utilisateur, et pas seulement sur la création de jolis écrans, a changé la donne pour ma carrière.",
+  "uiuxTestimonial3Name": "Lina T.",
+  "uiuxTestimonial3Role": "Junior UX Researcher"
 }

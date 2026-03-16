@@ -7,11 +7,12 @@ import flagFR from '../assets/flags/france.png';
 import flagUK from '../assets/flags/uk.png';
 import flagDZ from '../assets/flags/algeria.png';
 
-const Navbar = () => {
+const Navbar = ({ onOpenModal }) => {
   const { t, i18n } = useTranslation();
   const location = useLocation();
   const [theme, setTheme] = useState({ bgClass: 'bg-slate-900/80', primaryHex: '#4F46E5', textClass: 'text-white' });
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const dropdownRef = useRef(null);
 
   // Map routes to specific themes
@@ -21,7 +22,7 @@ const Navbar = () => {
     '/bootcamps/cybersecurity-introduction': { bgClass: 'bg-slate-900/95',  primaryHex: '#EF4444', textClass: 'text-white' },
     '/bootcamps/generative-ai-automation':   { bgClass: 'bg-white/95',      primaryHex: '#9333EA', textClass: 'text-slate-900' },
     '/bootcamps/power-bi':                   { bgClass: 'bg-white/95',      primaryHex: '#2563EB', textClass: 'text-slate-900' },
-    '/bootcamps/ui-ux-design':               { bgClass: 'bg-white/95',      primaryHex: '#EC4899', textClass: 'text-slate-900' },
+    '/bootcamps/ui-ux-design':               { bgClass: 'bg-white/95',      primaryHex: '#03BF1F', textClass: 'text-slate-900' },
     '/bootcamps/web-dev-essentials':         { bgClass: 'bg-white/95',      primaryHex: '#294CFF', textClass: 'text-slate-900' },
   };
 
@@ -88,8 +89,8 @@ const Navbar = () => {
         </div>
 
 
-        {/* Actions Area */}
-        <div className="flex items-center space-x-4 sm:space-x-6">
+        {/* Desktop Actions Area */}
+        <div className="hidden md:flex items-center space-x-4 sm:space-x-6">
           
           {/* Language Selector Dropdown */}
           <div className="relative" ref={dropdownRef}>
@@ -133,10 +134,63 @@ const Navbar = () => {
           </div>
 
           {/* Contact CTA Button */}
-          <button className="btn-primary">
+          <button className="btn-primary" onClick={() => onOpenModal && onOpenModal(t('freeAppointmentModalTitle'))}>
             {t('freeAppointment', 'Free Appointment')}
           </button>
 
+        </div>
+
+        {/* Mobile Hamburger Toggle */}
+        <div className="md:hidden flex items-center">
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className={`p-2 rounded-lg transition-colors focus:outline-none ${isDarkText ? 'hover:bg-slate-100 text-slate-800' : 'hover:bg-white/10 text-white'}`}
+          >
+            {isMobileMenuOpen ? (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            ) : (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            )}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu Dropdown */}
+      <div 
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
+      >
+        <div className={`px-5 py-4 flex flex-col items-center gap-4 border-t ${isDarkText ? 'border-slate-200' : 'border-white/10'}`}>
+          
+          {/* Mobile Language Selector Inline */}
+          <div className="flex items-center justify-center gap-4 py-2 w-full">
+            {languages.map((lang) => (
+              <button
+                key={lang.code}
+                onClick={() => {
+                  changeLanguage(lang.code);
+                  setIsMobileMenuOpen(false);
+                }}
+                className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-semibold transition-all ${
+                  currentLang === lang.code 
+                    ? (isDarkText ? 'bg-slate-100 text-[var(--page-primary)] ring-1 ring-[var(--page-primary)]' : 'bg-white/20 text-white ring-1 ring-white')
+                    : (isDarkText ? 'text-slate-500 hover:text-slate-800' : 'text-slate-300 hover:text-white')
+                }`}
+              >
+                <img src={lang.flagRaw} alt={lang.label} className="w-4 h-4 rounded-full object-cover shadow-sm bg-white" />
+                {lang.label}
+              </button>
+            ))}
+          </div>
+
+          <button 
+            className="btn-primary w-full py-3" 
+            onClick={() => {
+              onOpenModal && onOpenModal(t('freeAppointmentModalTitle'));
+              setIsMobileMenuOpen(false);
+            }}
+          >
+            {t('freeAppointment', 'Free Appointment')}
+          </button>
         </div>
       </div>
     </nav>

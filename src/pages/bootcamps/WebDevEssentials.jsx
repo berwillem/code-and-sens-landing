@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { useOutletContext } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import i18n from '../../i18n/i18n';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 // SVG Icons
 const CodeIcon = () => (
@@ -36,28 +42,6 @@ const CheckIcon = () => (
   </svg>
 );
 
-const MODULE_WEEKS = [
-  {
-    week: 'Weeks 1–2',
-    title: 'Web Foundations',
-    topics: ['HTML5 Semantics & Accessibility', 'CSS Grid & Flexbox Mastery', 'Responsive Design Principles', 'Browser DevTools'],
-  },
-  {
-    week: 'Weeks 3–5',
-    title: 'JavaScript & React',
-    topics: ['Modern ES6+ JavaScript', 'React Fundamentals & Hooks', 'State Management with Context', 'React Router & SPAs'],
-  },
-  {
-    week: 'Weeks 6–8',
-    title: 'Full-Stack & Backend',
-    topics: ['Node.js & Express APIs', 'Database Design (SQL + NoSQL)', 'Authentication & Security', 'REST API Development'],
-  },
-  {
-    week: 'Weeks 9–12',
-    title: 'Projects & Career',
-    topics: ['Capstone Project Build', 'Git & GitHub Workflow', 'Portfolio Development', 'Technical Interview Prep'],
-  },
-];
 
 const TESTIMONIALS = [
   {
@@ -85,12 +69,98 @@ const TESTIMONIALS = [
 
 const WebDevEssentials = () => {
   const { t } = useTranslation();
+  const { onOpenModal } = useOutletContext();
   const isRtl = i18n.dir(i18n.language) === 'rtl';
   const primaryColor = '#294CFF';
   const pageStyle = { '--page-primary': primaryColor };
 
+  const containerRef = useRef(null);
+  const heroRef = useRef(null);
+  const featuresRef = useRef(null);
+  const curriculumRef = useRef(null);
+
+  useGSAP(() => {
+    // 1. Hero Animation (Soft blur, fade in & gentle slide up)
+    gsap.fromTo(
+      '.hero-element',
+      { opacity: 0, y: 40, filter: 'blur(10px)' },
+      { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1.2, stagger: 0.15, ease: 'expo.out' }
+    );
+
+    // 2. Features Animation (Smooth stagger with slight scaling)
+    gsap.fromTo(
+      '.feature-card',
+      { opacity: 0, y: 60, scale: 0.95 },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 1,
+        stagger: 0.2,
+        ease: 'power4.out',
+        scrollTrigger: {
+          trigger: featuresRef.current,
+          start: 'top 75%',
+        },
+      }
+    );
+
+    // 3. Curriculum Animation (Header elegant reveal, cards stagger up with blur)
+    gsap.fromTo(
+      '.curriculum-header',
+      { opacity: 0, y: -20, filter: 'blur(5px)' },
+      {
+        opacity: 1,
+        y: 0,
+        filter: 'blur(0px)',
+        duration: 1,
+        ease: 'expo.out',
+        scrollTrigger: {
+          trigger: curriculumRef.current,
+          start: 'top 80%',
+        },
+      }
+    );
+
+    gsap.fromTo(
+      '.curriculum-card',
+      { opacity: 0, scale: 0.9, y: 40, filter: 'blur(8px)' },
+      {
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        filter: 'blur(0px)',
+        duration: 1,
+        stagger: 0.15,
+        ease: 'power4.out',
+        scrollTrigger: {
+          trigger: '.curriculum-header',
+          start: 'top 60%',
+        },
+      }
+    );
+
+    gsap.fromTo(
+      '.curriculum-btn',
+      { opacity: 0, scale: 0.9, y: 20 },
+      {
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        duration: 0.8,
+        delay: 0.6,
+        ease: 'back.out(1.5)',
+        scrollTrigger: {
+          trigger: '.curriculum-header',
+          start: 'top 60%',
+        },
+      }
+    );
+
+  }, { scope: containerRef });
+
   return (
-    <div className="flex flex-col font-sans" style={pageStyle}>
+    <div className="flex flex-col font-sans" style={pageStyle} ref={containerRef}>
 
       {/* ─── 1. HERO ─────────────────────────────────────────────────────── */}
       <section className="w-full px-8 lg:px-16 py-4 flex flex-col lg:flex-row items-center justify-between gap-6 min-h-[calc(100vh-5rem)]">
@@ -98,37 +168,37 @@ const WebDevEssentials = () => {
         {/* Left: Text */}
         <div className="flex-1 space-y-5" style={{ textAlign: isRtl ? 'right' : 'left' }}>
           <div
-            className="inline-flex items-center gap-2 bg-[#294CFF]/10 text-[#294CFF] px-4 py-1.5 rounded-full text-xs font-semibold border border-[#294CFF]/20"
+            className="hero-element inline-flex items-center gap-2 bg-[#294CFF]/10 text-[#294CFF] px-4 py-1.5 rounded-full text-xs font-semibold border border-[#294CFF]/20"
             style={{ flexDirection: isRtl ? 'row-reverse' : 'row' }}
           >
             <span className="w-2 h-2 rounded-full bg-[#294CFF] animate-pulse"></span>
             {t('bootcampTag')}
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight font-heading">
+          <h1 className="hero-element text-4xl md:text-5xl lg:text-6xl font-bold leading-tight font-heading">
             {t('heroTitle1')}{' '}
             <span className="text-[#294CFF]">{t('heroHighlight')}</span>
             <br />{t('heroTitle2')}
           </h1>
 
-          <p className="text-base text-slate-500 max-w-lg leading-relaxed">
+          <p className="hero-element text-base text-slate-500 max-w-lg leading-relaxed">
             {t('heroSubtitle')}
           </p>
 
           <div
-            className="flex flex-wrap gap-3"
-            style={{ justifyContent: isRtl ? 'flex-end' : 'flex-start' }}
+            className="hero-element flex flex-wrap gap-3"
+            style={{ justifyContent: isRtl ? 'flex-end' : 'flex-start', flexDirection: isRtl ? 'row-reverse' : 'row' }}
           >
-            <button className="btn-primary text-sm px-7 py-3 shadow-lg" style={{ boxShadow: '0 8px 32px #294CFF33' }}>
+            <button className="btn-primary text-sm px-7 py-3 shadow-lg" style={{ boxShadow: '0 8px 32px #294CFF33' }} onClick={() => onOpenModal && onOpenModal()}>
               {t('heroCta1')}
             </button>
-            <button className="btn-secondary text-sm px-7 py-3">
+            <button className="btn-secondary text-sm px-7 py-3" onClick={() => document.getElementById('curriculum')?.scrollIntoView({ behavior: 'smooth' })}>
               {t('heroCta2')}
             </button>
           </div>
 
           <div
-            className="flex items-center gap-3 text-slate-500 text-xs pt-1"
+            className="hero-element flex items-center gap-3 text-slate-500 text-xs pt-1"
             style={{ justifyContent: isRtl ? 'flex-end' : 'flex-start', flexDirection: isRtl ? 'row-reverse' : 'row' }}
           >
             <div className="flex gap-0.5">
@@ -139,7 +209,7 @@ const WebDevEssentials = () => {
         </div>
 
         {/* Right: Code Mockup — always LTR regardless of language */}
-        <div className="flex-1 w-full max-w-md relative group" dir="ltr">
+        <div className="hero-element flex-1 w-full max-w-md relative group" dir="ltr">
           <div
             className="absolute -inset-1 rounded-2xl blur-xl opacity-25 group-hover:opacity-40 transition duration-700"
             style={{ background: 'linear-gradient(135deg, #294CFF, #00c6ff)' }}
@@ -176,7 +246,7 @@ const WebDevEssentials = () => {
       </section>
 
       {/* ─── 2. EVERYTHING YOU NEED ─────────────────────────────────────── */}
-      <section className="bg-slate-50 py-24">
+      <section className="bg-slate-50 py-24" ref={featuresRef}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 space-y-4">
             <h2 className="text-4xl lg:text-5xl font-bold font-heading">{t('featuresTitle')}</h2>
@@ -187,7 +257,7 @@ const WebDevEssentials = () => {
 
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Card 1 */}
-            <div className="card-clickable bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-lg flex flex-col group">
+            <div className="feature-card card-clickable bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-lg flex flex-col group">
               <div className="h-52 flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-[#294CFF]/10 to-[#294CFF]/5">
                 <div className="flex gap-5 items-center">
                   <div className="w-16 h-16 rounded-2xl bg-[#61DAFB]/20 border border-[#61DAFB]/30 flex items-center justify-center text-[#294CFF] shadow-md">
@@ -204,12 +274,12 @@ const WebDevEssentials = () => {
               <div className="p-8 flex-1 flex flex-col">
                 <h3 className="text-2xl font-bold font-heading mb-3 group-hover:text-[#294CFF] transition-colors">{t('card1Title')}</h3>
                 <p className="text-slate-500 leading-relaxed flex-1 mb-6">{t('card1Desc')}</p>
-                <button className="btn-secondary w-full text-sm uppercase tracking-wider">{t('card1Cta')}</button>
+                <button className="btn-secondary w-full text-sm uppercase tracking-wider" onClick={() => onOpenModal && onOpenModal()}>{t('card1Cta')}</button>
               </div>
             </div>
 
             {/* Card 2 */}
-            <div className="card-clickable bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-lg flex flex-col group">
+            <div className="feature-card card-clickable bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-lg flex flex-col group">
               <div className="h-52 flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-cyan-50 to-sky-50">
                 <div className="text-center">
                   <div className="w-20 h-20 rounded-2xl bg-cyan-500/10 border border-cyan-400/30 flex items-center justify-center text-cyan-600 mx-auto shadow-md group-hover:scale-110 transition-transform duration-300">
@@ -221,12 +291,12 @@ const WebDevEssentials = () => {
               <div className="p-8 flex-1 flex flex-col">
                 <h3 className="text-2xl font-bold font-heading mb-3 group-hover:text-cyan-600 transition-colors">{t('card2Title')}</h3>
                 <p className="text-slate-500 leading-relaxed flex-1 mb-6">{t('card2Desc')}</p>
-                <button className="btn-secondary w-full text-sm uppercase tracking-wider">{t('card2Cta')}</button>
+                <button className="btn-secondary w-full text-sm uppercase tracking-wider" onClick={() => onOpenModal && onOpenModal()}>{t('card2Cta')}</button>
               </div>
             </div>
 
             {/* Card 3 */}
-            <div className="card-clickable bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-lg flex flex-col group">
+            <div className="feature-card card-clickable bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-lg flex flex-col group">
               <div className="h-52 flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-indigo-50 to-violet-50">
                 <div className="text-center">
                   <div className="w-20 h-20 rounded-full bg-indigo-500/10 border border-indigo-400/30 flex items-center justify-center text-indigo-600 mx-auto shadow-md group-hover:scale-110 transition-transform duration-300">
@@ -238,7 +308,7 @@ const WebDevEssentials = () => {
               <div className="p-8 flex-1 flex flex-col">
                 <h3 className="text-2xl font-bold font-heading mb-3 group-hover:text-indigo-600 transition-colors">{t('card3Title')}</h3>
                 <p className="text-slate-500 leading-relaxed flex-1 mb-6">{t('card3Desc')}</p>
-                <button className="btn-secondary w-full text-sm uppercase tracking-wider">{t('card3Cta')}</button>
+                <button className="btn-secondary w-full text-sm uppercase tracking-wider" onClick={() => onOpenModal && onOpenModal()}>{t('card3Cta')}</button>
               </div>
             </div>
           </div>
@@ -246,9 +316,9 @@ const WebDevEssentials = () => {
       </section>
 
       {/* ─── 3. CURRICULUM ───────────────────────────────────────────────── */}
-      <section className="py-24 bg-white">
+      <section id="curriculum" className="py-24 bg-white" ref={curriculumRef}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 space-y-4">
+          <div className="curriculum-header text-center mb-16 space-y-4">
             <h2 className="text-4xl lg:text-5xl font-bold font-heading">{t('curriculumTitle')}</h2>
             <p className="text-lg text-slate-500 max-w-2xl mx-auto">
               {t('curriculumSubtitle')}
@@ -256,10 +326,10 @@ const WebDevEssentials = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {MODULE_WEEKS.map((mod, i) => (
+            {(t('curriculumModules', { returnObjects: true }) || []).map((mod, i) => (
               <div
                 key={i}
-                className="group relative bg-white rounded-2xl border border-slate-100 p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+                className="curriculum-card group relative bg-white rounded-2xl border border-slate-100 p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden"
               >
                 {/* Accent bar — switches sides for RTL */}
                 <div
@@ -271,9 +341,9 @@ const WebDevEssentials = () => {
                   <h3 className="text-xl font-bold font-heading mt-1 mb-4">{mod.title}</h3>
                   <ul className="space-y-2">
                     {mod.topics.map((topic, j) => (
-                      <li key={j} className={`flex items-center gap-3 text-slate-500 text-sm ${isRtl ? 'flex-row-reverse' : ''}`}>
-                        <span className="text-[#294CFF] flex-shrink-0"><CheckIcon /></span>
-                        {topic}
+                      <li key={j} className={`flex items-start gap-3 text-slate-500 text-sm ${isRtl ? 'flex-row-reverse' : ''}`}>
+                        <span className="text-[#294CFF] flex-shrink-0 mt-0.5"><CheckIcon /></span>
+                        <span className="leading-snug">{topic}</span>
                       </li>
                     ))}
                   </ul>
@@ -283,7 +353,7 @@ const WebDevEssentials = () => {
           </div>
 
           <div className="text-center mt-12">
-            <button className="btn-primary px-10 py-4 text-base">
+            <button className="curriculum-btn btn-primary px-10 py-4 text-base shadow-lg" onClick={() => onOpenModal && onOpenModal()}>
               {t('curriculumCta')}
             </button>
           </div>
