@@ -3,6 +3,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Navbar from '../components/Navbar';
 import ContactModal from '../components/ContactModal';
+import { submitToHubspot } from '../utils/hubspot';
 
 // Route-to-primary-color map (mirrors Navbar)
 const routePrimaryColors = {
@@ -36,9 +37,19 @@ const BootcampLayout = () => {
     setTimeout(() => setModalTitle(''), 300);
   };
 
-  const handlePhoneSubmit = (e) => {
+  const handlePhoneSubmit = async (e) => {
     e.preventDefault();
-    if (phone.trim()) setSubmitted(true);
+    if (phone.trim()) {
+      const success = await submitToHubspot(
+        { phone },
+        location.pathname,
+        'Footer Lead Capture',
+        t
+      );
+      if (success) {
+        setSubmitted(true);
+      }
+    }
   };
 
   return (

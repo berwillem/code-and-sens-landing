@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import i18n from '../i18n/i18n';
+import { submitToHubspot } from '../utils/hubspot';
 
 const CheckIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -11,6 +12,7 @@ const CheckIcon = () => (
 const ContactModal = ({ isOpen, onClose, primaryColor, customTitle }) => {
   const { t } = useTranslation();
   const [isRendered, setIsRendered] = useState(false);
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '' });
   const isRtl = i18n.dir(i18n.language) === 'rtl';
 
   useEffect(() => {
@@ -87,14 +89,23 @@ const ContactModal = ({ isOpen, onClose, primaryColor, customTitle }) => {
         {/* Right form */}
         <div className="md:w-3/5 p-8 md:p-12 overflow-y-auto">
           <h3 className="text-xl font-bold font-heading mb-8 text-slate-800">{t('formTitle')}</h3>
-          <form className="space-y-5" onSubmit={(e) => { e.preventDefault(); onClose(); }}>
+          <form className="space-y-5" onSubmit={async (e) => { 
+            e.preventDefault(); 
+            const success = await submitToHubspot(
+              { name: formData.name, email: formData.email, phone: formData.phone }, 
+              window.location.pathname, 
+              customTitle || t('contactTitle', 'Bootcamp Contact'),
+              t
+            );
+            if (success) onClose(); 
+          }}>
             <div className="space-y-1.5">
               <label htmlFor="modal-name" className="text-sm font-semibold text-slate-600">{t('formName')}</label>
-              <input type="text" id="modal-name" className="input w-full" placeholder={t('formNamePlaceholder', 'Ahmed Benali')} />
+              <input type="text" id="modal-name" className="input w-full" placeholder={t('formNamePlaceholder', 'Ahmed Benali')} value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} required />
             </div>
             <div className="space-y-1.5">
               <label htmlFor="modal-email" className="text-sm font-semibold text-slate-600">{t('formEmail')}</label>
-              <input type="email" id="modal-email" className="input w-full" placeholder="ahmed@example.com" />
+              <input type="email" id="modal-email" className="input w-full" placeholder="ahmed@example.com" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} required />
             </div>
             <div className="space-y-1.5">
               <label htmlFor="modal-phone" className="text-sm font-semibold text-slate-600">{t('formPhone')}</label>
@@ -102,7 +113,7 @@ const ContactModal = ({ isOpen, onClose, primaryColor, customTitle }) => {
                 <span className="inline-flex items-center px-4 rounded-l-lg border border-r-0 border-slate-200 bg-slate-50 text-slate-500 text-sm font-sans flex-shrink-0">
                   +213
                 </span>
-                <input type="tel" id="modal-phone" className="input rounded-l-none w-full" placeholder="555 123 456" />
+                <input type="tel" id="modal-phone" className="input rounded-l-none w-full" placeholder="555 123 456" value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} required />
               </div>
             </div>
             <button

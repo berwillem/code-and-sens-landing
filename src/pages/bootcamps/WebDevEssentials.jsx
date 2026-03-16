@@ -1,7 +1,8 @@
-import React, { useRef } from 'react';
-import { useOutletContext } from 'react-router-dom';
+import React, { useRef, useState } from 'react';
+import { useOutletContext, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import i18n from '../../i18n/i18n';
+import { submitToHubspot } from '../../utils/hubspot';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -70,9 +71,12 @@ const TESTIMONIALS = [
 const WebDevEssentials = () => {
   const { t } = useTranslation();
   const { onOpenModal } = useOutletContext();
+  const location = useLocation();
   const isRtl = i18n.dir(i18n.language) === 'rtl';
   const primaryColor = '#294CFF';
   const pageStyle = { '--page-primary': primaryColor };
+
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '' });
 
   const containerRef = useRef(null);
   const heroRef = useRef(null);
@@ -440,14 +444,25 @@ const WebDevEssentials = () => {
             {/* Right form — always LTR layout */}
             <div className="md:w-3/5 p-10 md:p-14">
               <h3 className="text-xl font-bold font-heading mb-8 text-slate-800">{t('formTitle')}</h3>
-              <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+              <form className="space-y-5" onSubmit={async (e) => { 
+                e.preventDefault(); 
+                const success = await submitToHubspot(
+                  { name: formData.name, email: formData.email, phone: formData.phone }, 
+                  location.pathname, 
+                  t('contactTitle', 'Bootcamp Contact'),
+                  t
+                );
+                if (success) {
+                  setFormData({ name: '', email: '', phone: '' });
+                }
+              }}>
                 <div className="space-y-1.5">
                   <label htmlFor="name" className="text-sm font-semibold text-slate-600">{t('formName')}</label>
-                  <input type="text" id="name" className="input w-full" placeholder="Ahmed Benali" />
+                  <input type="text" id="name" className="input w-full" placeholder="Ahmed Benali" value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} required />
                 </div>
                 <div className="space-y-1.5">
                   <label htmlFor="email" className="text-sm font-semibold text-slate-600">{t('formEmail')}</label>
-                  <input type="email" id="email" className="input w-full" placeholder="ahmed@example.com" />
+                  <input type="email" id="email" className="input w-full" placeholder="ahmed@example.com" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} required />
                 </div>
                 <div className="space-y-1.5">
                   <label htmlFor="phone" className="text-sm font-semibold text-slate-600">{t('formPhone')}</label>
@@ -455,7 +470,7 @@ const WebDevEssentials = () => {
                     <span className="inline-flex items-center px-4 rounded-l-lg border border-r-0 border-slate-200 bg-slate-50 text-slate-500 text-sm font-sans flex-shrink-0">
                       +213
                     </span>
-                    <input type="tel" id="phone" className="input rounded-l-none w-full" placeholder="555 123 456" />
+                    <input type="tel" id="phone" className="input rounded-l-none w-full" placeholder="555 123 456" value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} required />
                   </div>
                 </div>
                 <button
