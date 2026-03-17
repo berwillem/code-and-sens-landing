@@ -105,7 +105,7 @@ const ContactModal = ({ isOpen, onClose, primaryColor, customTitle }) => {
             </div>
             <div className="space-y-1.5">
               <label htmlFor="modal-email" className="text-sm font-semibold text-slate-600">{t('formEmail')}</label>
-              <input type="email" id="modal-email" className="input w-full" placeholder="ahmed@example.com" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} required />
+              <input type="email" id="modal-email" className="input w-full" placeholder="codeandsens@contact.com" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} required />
             </div>
             <div className="space-y-1.5">
               <label htmlFor="modal-phone" className="text-sm font-semibold text-slate-600">{t('formPhone')}</label>
@@ -113,7 +113,7 @@ const ContactModal = ({ isOpen, onClose, primaryColor, customTitle }) => {
                 <span className="inline-flex items-center px-4 rounded-l-lg border border-r-0 border-slate-200 bg-slate-50 text-slate-500 text-sm font-sans flex-shrink-0">
                   +213
                 </span>
-                <input type="tel" id="modal-phone" className="input rounded-l-none w-full" placeholder="555 123 456" value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} required />
+                <input type="tel" id="modal-phone" className="input rounded-l-none w-full" placeholder="0668 30 15 69" value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} required />
               </div>
             </div>
             <button

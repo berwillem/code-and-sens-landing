@@ -82,15 +82,15 @@ const BootcampLayout = () => {
                 <img src="/logo.svg" alt="Code & Sens" className="h-9 filter brightness-0 invert" />
               </div>
               <p className="text-white/70 text-sm leading-relaxed">
-                Algeria's premier tech bootcamp. We turn beginners into job-ready developers in 12 weeks.
+                {t('footerTagline', "Algeria's premier tech bootcamp. We turn beginners into job-ready developers in 12 weeks.")}
               </p>
             </div>
 
             {/* Phone lead capture */}
             {!submitted ? (
               <form onSubmit={handlePhoneSubmit} className="space-y-2">
-                <p className="text-white text-sm font-semibold">Get a callback in 24h:</p>
-                <div className="flex flex-col sm:flex-row gap-3 sm:gap-0 mt-1">
+                <p className="text-white text-sm font-semibold">{t('footerCallbackLabel', 'Get a callback in 24h:')}</p>
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-0 mt-1" dir="ltr">
                   <div className="flex overflow-hidden rounded-xl sm:rounded-r-none shadow-sm bg-white/10 flex-1 border border-white/10">
                     <span className="inline-flex items-center px-4 md:px-3 text-white/80 text-sm font-sans border-r border-white/20 flex-shrink-0">
                       +213
@@ -100,7 +100,8 @@ const BootcampLayout = () => {
                       value={phone}
                       onChange={e => setPhone(e.target.value)}
                       placeholder="555 123 456"
-                      className="w-full px-4 md:px-3 py-3 md:py-2.5 bg-transparent placeholder-white/30 text-white text-base md:text-sm outline-none focus:bg-white/5 transition-colors"
+                      className="w-full px-4 md:px-3 py-3 md:py-2.5 bg-transparent placeholder-white/30 text-white text-base md:text-sm outline-none focus:bg-white/5 transition-colors text-left"
+                      dir="ltr"
                     />
                   </div>
                   <button
@@ -116,35 +117,35 @@ const BootcampLayout = () => {
             ) : (
               <div className="bg-white/15 rounded-lg px-4 py-3 text-white text-sm flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                We'll call you back shortly!
+                {t('footerCallbackSuccess', "We'll call you back shortly!")}
               </div>
             )}
           </div>
 
           {/* Column 2 — Contact Info */}
           <div className="space-y-5">
-            <h4 className="text-white font-heading font-bold text-lg">Contact Us</h4>
+            <h4 className="text-white font-heading font-bold text-lg">{t('footerContactTitle', 'Contact Us')}</h4>
             <ul className="space-y-3">
               <li className="flex items-start gap-3 text-white/80 text-sm">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0 mt-0.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.1 7.87a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg>
-                <a href="tel:+213555123456" className="hover:text-white transition-colors">+213 555 123 456</a>
+                <a href="tel:0668301569" className="hover:text-white transition-colors" dir="ltr">0668 30 15 69</a>
               </li>
               <li className="flex items-start gap-3 text-white/80 text-sm">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0 mt-0.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                <a href="mailto:contact@codeandsens.dz" className="hover:text-white transition-colors">contact@codeandsens.dz</a>
+                <a href="mailto:codeandsens@contact.com" className="hover:text-white transition-colors" dir="ltr">codeandsens@contact.com</a>
               </li>
               <li className="flex items-start gap-3 text-white/80 text-sm">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0 mt-0.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                <span>Rue des Frères Bouadou, Birtouta<br />Alger, Algérie</span>
+                <span dir="ltr" className="inline-block" style={{ textAlign: 'start' }}>N 1, lot alioua fodil,<br />Chéraga 16014</span>
               </li>
             </ul>
 
             {/* Social Links */}
             <div className="flex gap-3 pt-1">
               {[
-                { label: 'Instagram', href: 'https://instagram.com/codeandsens', icon: <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01M6.5 2h11A4.5 4.5 0 0122 6.5v11a4.5 4.5 0 01-4.5 4.5h-11A4.5 4.5 0 012 17.5v-11A4.5 4.5 0 016.5 2z" /> },
-                { label: 'LinkedIn', href: 'https://linkedin.com/company/codeandsens', icon: <><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></> },
-                { label: 'Facebook', href: 'https://facebook.com/codeandsens', icon: <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" /> },
+                { label: 'Instagram', href: 'https://www.instagram.com/codeandsens', icon: <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01M6.5 2h11A4.5 4.5 0 0122 6.5v11a4.5 4.5 0 01-4.5 4.5h-11A4.5 4.5 0 012 17.5v-11A4.5 4.5 0 016.5 2z" /> },
+                { label: 'LinkedIn', href: 'https://www.linkedin.com/company/code-and-sens', icon: <><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></> },
+                { label: 'Facebook', href: 'https://www.linkedin.com/company/code-and-sens', icon: <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" /> },
               ].map(s => (
                 <a
                   key={s.label}
@@ -162,7 +163,7 @@ const BootcampLayout = () => {
 
           {/* Column 3 — Google Maps */}
           <div className="space-y-3">
-            <h4 className="text-white font-heading font-bold text-lg">Find Us</h4>
+            <h4 className="text-white font-heading font-bold text-lg">{t('footerFindUs', 'Find Us')}</h4>
             <div className="rounded-xl overflow-hidden shadow-lg border-2 border-white/20" style={{ height: '200px' }}>
               <iframe
                 title="Code & Sens Location"

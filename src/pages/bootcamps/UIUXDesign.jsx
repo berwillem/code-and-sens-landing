@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useOutletContext, useLocation } from 'react-router-dom';
 import i18n from '../../i18n/i18n';
@@ -6,8 +6,54 @@ import { submitToHubspot } from '../../utils/hubspot';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
+
+// Custom icons import
+import figmaIcon from '../../assets/ui-ux/figma.png';
+import aiIcon from '../../assets/ui-ux/ai.png';
+import psIcon from '../../assets/ui-ux/ps.png';
 
 gsap.registerPlugin(ScrollTrigger);
+
+const TESTIMONIALS = [
+  {
+    name: 'Younes A.',
+    role: 'Financier à la Clinique du Val',
+    quote: "La formation était excellente, l'instructeur très pédagogue. Un grand merci à lui et à toute l'équipe Code & Sens.",
+    rating: 5,
+    avatar: 'YA',
+  },
+  {
+    name: 'Wassim B.',
+    role: 'Tech Support @ Moneco',
+    quote: "jazt hayle t3lemna bzf 3fays ! J'ai connu beaucoup de gens bien aussi à l'école. Je recommande.",
+    rating: 5,
+    avatar: 'WB',
+  },
+  {
+    name: 'Manel K.',
+    role: '2nd Year Geology Student @ USTHB',
+    quote: "بدينا موالو م 0 حتا ولينا نخدموا كلش وحدنا المرافقة في الدورة و بعد الدورة كانت رائعة بديت الخدمة بفضلكم شكرا و ربي يوفقكم",
+    rating: 5,
+    avatar: 'MK',
+  },
+  {
+    name: 'Mouhamed S.',
+    role: 'Alumni Code & Sens',
+    quote: "La formation était top, la pédagogie d'apprentissage aussi. On apprend avec des projets réels et en pratiquant.",
+    rating: 5,
+    avatar: 'MS',
+  },
+  {
+    name: 'Lydia H.',
+    role: 'Alumni Code & Sens',
+    quote: "Excellent school! Thank you very much for everything and special mention to my group, best people ever ❤️",
+    rating: 5,
+    avatar: 'LH',
+  },
+];
 
 // Inline Icons
 const CheckIcon = () => (
@@ -32,8 +78,25 @@ const LayersIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
 );
 
+const UserIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+    <circle cx="12" cy="7" r="4"></circle>
+  </svg>
+);
+
+const ComponentIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon>
+    <line x1="12" y1="22" x2="12" y2="15.5"></line>
+    <polyline points="22 8.5 12 15.5 2 8.5"></polyline>
+    <polyline points="2 15.5 12 8.5 22 15.5"></polyline>
+    <line x1="12" y1="2" x2="12" y2="8.5"></line>
+  </svg>
+);
+
 const StarIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#03BF1F" stroke="#03BF1F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FACC15" stroke="#FACC15" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
   </svg>
 );
@@ -52,6 +115,7 @@ const UIUXDesign = () => {
   const featuresRef = useRef(null);
   const curriculumRef = useRef(null);
   const workRef = useRef(null);
+  const floatingIconsRef = useRef([]);
 
   useGSAP(() => {
     // 1. Hero Animation (Soft blur, fade in & gentle slide up)
@@ -151,7 +215,7 @@ const UIUXDesign = () => {
   }, { scope: containerRef });
 
   return (
-    <div className="flex flex-col font-sans" style={pageStyle} ref={containerRef}>
+    <div className="flex flex-col font-sans overflow-x-hidden" style={pageStyle} ref={containerRef}>
 
       {/* Injecting Marquee Keyframes */}
       <style>
@@ -170,7 +234,7 @@ const UIUXDesign = () => {
       </style>
 
       {/* ─── 1. HERO ─────────────────────────────────────────────────────── */}
-      <section className="w-full px-8 lg:px-16 py-4 flex flex-col lg:flex-row items-center justify-between gap-6 min-h-[calc(100vh-5rem)]">
+      <section className="relative w-full px-8 lg:px-16 py-8 flex flex-col lg:flex-row items-center justify-between gap-6 min-h-[calc(100vh-5rem)]">
         
         {/* Left: Text */}
         <div className="flex-1 space-y-5" style={{ textAlign: isRtl ? 'right' : 'left' }}>
@@ -179,7 +243,7 @@ const UIUXDesign = () => {
             style={{ flexDirection: isRtl ? 'row-reverse' : 'row', backgroundColor: `${primaryColor}1a`, color: primaryColor, border: `1px solid ${primaryColor}33` }}
           >
             <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: primaryColor }}></span>
-            UI/UX Design
+            {t('bootcampTag')}
           </div>
 
           <h1 className="hero-element text-5xl md:text-6xl lg:text-7xl font-bold leading-tight font-heading">
@@ -223,7 +287,7 @@ const UIUXDesign = () => {
         </div>
 
         {/* Right: Creative Visual Container */}
-        <div className="hero-element flex-1 w-full max-w-lg relative group h-80 lg:h-96">
+        <div className="hero-element flex-1 w-full max-w-[320px] sm:max-w-md md:max-w-lg mx-auto relative group h-[340px] lg:h-96 mt-12 mb-28 lg:my-0">
           <div className="absolute inset-0 bg-gradient-to-tr from-[#03BF1F]/20 to-transparent rounded-[3rem] transform rotate-3 scale-105 transition-transform duration-700 group-hover:rotate-6 group-hover:scale-110 blur-2xl"></div>
           
           {/* Main Floating Mockup */}
@@ -256,20 +320,25 @@ const UIUXDesign = () => {
           </div>
 
           {/* Floating UI Elements */}
-          <div className="absolute -right-6 top-10 bg-white p-3 rounded-2xl shadow-xl border border-slate-100 z-20 animate-bounce" style={{ animationDuration: '3s' }}>
-             <div className="flex items-center gap-2">
-                <div className="w-6 h-6 rounded-full" style={{ backgroundColor: `${primaryColor}30`, color: primaryColor }}><PenIcon /></div>
-                <span className="text-xs font-bold font-sans text-slate-700">Auto-Layout</span>
-             </div>
+          <div 
+            ref={el => el && floatingIconsRef.current.push(el)}
+            className="absolute -right-6 md:-right-12 top-10 w-20 h-20 md:w-32 md:h-32 z-20 flex items-center justify-center p-3 md:p-4 rounded-[1.5rem] md:rounded-[2rem] bg-white border border-slate-100 shadow-2xl backdrop-blur-sm"
+          >
+            <img src={figmaIcon} alt="Figma" className="w-full h-full object-contain drop-shadow-md" />
           </div>
-          <div className="absolute -left-4 bottom-16 bg-white p-3 rounded-2xl shadow-xl border border-slate-100 z-20 animate-bounce" style={{ animationDuration: '4s' }}>
-             <div className="flex items-center gap-2">
-                <div className="flex -space-x-2">
-                  <div className="w-6 h-6 rounded-full border-2 border-white bg-emerald-200"></div>
-                  <div className="w-6 h-6 rounded-full border-2 border-white bg-teal-200"></div>
-                </div>
-                <span className="text-xs font-bold font-sans text-slate-700">Prototype</span>
-             </div>
+
+          <div 
+            ref={el => el && floatingIconsRef.current.push(el)}
+            className="absolute -left-6 md:-left-8 top-32 w-16 h-16 md:w-24 md:h-24 z-20 flex items-center justify-center p-2.5 md:p-3.5 rounded-xl md:rounded-[1.5rem] bg-white border border-slate-100 shadow-xl backdrop-blur-sm"
+          >
+             <img src={aiIcon} alt="Illustrator" className="w-full h-full object-contain drop-shadow-md" />
+          </div>
+
+          <div 
+            ref={el => el && floatingIconsRef.current.push(el)}
+            className="absolute right-10 -bottom-6 md:-bottom-8 w-16 h-16 md:w-28 md:h-28 z-20 flex items-center justify-center p-2.5 md:p-3.5 rounded-xl md:rounded-[1.5rem] bg-white border border-slate-100 shadow-xl backdrop-blur-sm"
+          >
+             <img src={psIcon} alt="Photoshop" className="w-full h-full object-contain drop-shadow-md" />
           </div>
         </div>
       </section>
@@ -333,78 +402,96 @@ const UIUXDesign = () => {
                </div>
             </div>
           </div>
+
+          {/* Features CTA */}
+          <div className="text-center mt-16 pt-8 border-t border-slate-100">
+             <button 
+               className="btn-primary px-10 py-4 text-base shadow-lg hover:-translate-y-1 transition-transform" 
+               style={{ backgroundColor: primaryColor }}
+               onClick={() => document.getElementById('curriculum')?.scrollIntoView({ behavior: 'smooth' })}
+             >
+               {t('card1Cta')}
+             </button>
+          </div>
         </div>
       </section>
 
-      {/* ─── 3. STUDENTS WORK & TESTIMONIALS ────────────────────────────── */}
-      <section className="py-24 overflow-hidden relative" ref={workRef}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <div className="space-y-4 max-w-2xl">
-            <h2 className="text-4xl lg:text-5xl font-bold font-heading">{t('uiuxWorkTitle')}</h2>
-            <p className="text-lg text-slate-500">
-              {t('uiuxWorkSubtitle')}
-            </p>
+      {/* ─── 3. TESTIMONIALS ────────────────────────────── */}
+      <section
+        className="py-24 relative overflow-hidden"
+        style={{ background: `linear-gradient(135deg, ${primaryColor} 0%, #028e17 100%)` }}
+        ref={workRef}
+      >
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full opacity-10 -translate-y-1/2 translate-x-1/2"
+          style={{ background: 'radial-gradient(circle, white 0%, transparent 70%)' }}></div>
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full opacity-10 translate-y-1/2 -translate-x-1/2"
+          style={{ background: 'radial-gradient(circle, white 0%, transparent 70%)' }}></div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 space-y-4">
+            <h2 className="text-4xl lg:text-5xl font-bold font-heading text-white">{t('uiuxWorkTitle')}</h2>
+            <div className="flex items-center justify-center gap-2 text-white/80">
+              <div className="flex">
+                {[1,2,3,4,5].map(i => <StarIcon key={i} />)}
+              </div>
+              <span className="text-lg font-semibold">4.9</span>
+              <span className="text-white/50">· 160+ graduates</span>
+            </div>
           </div>
-          <button className="text-[#03BF1F] font-bold text-sm tracking-wide transition-all duration-300 hover:-translate-y-0.5 hover:opacity-80" onClick={() => onOpenModal && onOpenModal()}>
-            {t('heroCta1')} →
-          </button>
-        </div>
 
-        <div className="flex flex-col lg:flex-row gap-12 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-           
-           {/* Left: Testimonials Column */}
-           <div className="lg:w-1/3 flex flex-col gap-6">
-             {[
-               { quote: t('uiuxTestimonial1Quote'), name: t('uiuxTestimonial1Name'), role: t('uiuxTestimonial1Role') },
-               { quote: t('uiuxTestimonial2Quote'), name: t('uiuxTestimonial2Name'), role: t('uiuxTestimonial2Role') },
-               { quote: t('uiuxTestimonial3Quote'), name: t('uiuxTestimonial3Name'), role: t('uiuxTestimonial3Role') },
-             ].map((tItem, idx) => (
-                <div key={idx} className="testimonial-card bg-white border border-slate-100 p-6 rounded-2xl shadow-sm relative z-10">
-                  <div className="text-[#03BF1F] mb-3">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.694 20 7.922L20 8.522H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.694 6 7.922L6 8.522H10V18H0Z"/></svg>
-                  </div>
-                  <p className="text-slate-600 text-sm leading-relaxed mb-4 italic">"{tItem.quote}"</p>
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center font-bold text-slate-500 text-xs">
-                      {tItem.name.charAt(0)}
+          <div className="w-full" dir="ltr">
+            <Swiper
+              modules={[Autoplay]}
+              grabCursor={true}
+              centeredSlides={true}
+              slidesPerView={'auto'}
+              loop={true}
+              autoplay={{ delay: 7000, disableOnInteraction: false }}
+              breakpoints={{
+                320: { slidesPerView: 1, spaceBetween: 20 },
+                768: { slidesPerView: 1.5, spaceBetween: 30 },
+                1024: { slidesPerView: 3, spaceBetween: 40 },
+              }}
+              className="testimonials-swiper !pb-12 px-4"
+            >
+              {[...TESTIMONIALS, ...TESTIMONIALS].map((testimonial, i) => (
+                <SwiperSlide key={i} className="!h-auto flex max-w-[400px]">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 transition-all duration-500 flex flex-col w-full h-full">
+                    <div className="flex items-center gap-1 mb-5">
+                       {[...Array(testimonial.rating)].map((_, j) => (
+                         <svg key={j} width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="text-yellow-400">
+                           <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                         </svg>
+                       ))}
                     </div>
-                    <div>
-                      <h4 className="font-bold text-slate-800 text-sm">{tItem.name}</h4>
-                      <p className="text-xs text-slate-500">{tItem.role}</p>
+                    <p className="text-white/90 text-sm leading-relaxed mb-7 italic flex-1">"{testimonial.quote}"</p>
+                    <div className="flex items-center gap-3">
+                      <div
+                        className="w-10 h-10 rounded-full flex items-center justify-center text-white text-xs font-bold font-heading flex-shrink-0"
+                        style={{ background: 'rgba(255,255,255,0.2)' }}
+                      >
+                        {testimonial.avatar}
+                      </div>
+                      <div>
+                        <div className="text-white font-semibold text-sm">{testimonial.name}</div>
+                        <div className="text-white/60 text-xs">{testimonial.role}</div>
+                      </div>
                     </div>
                   </div>
-                </div>
-             ))}
-           </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
 
-           {/* Right: Infinite Marquee of Mockups */}
-           <div className="lg:w-2/3 relative h-[500px] overflow-hidden rounded-3xl bg-slate-900 shadow-2xl flex items-center">
-             
-             {/* Gradient Overlays for smooth scrolling edges */}
-             <div className="absolute top-0 bottom-0 left-0 w-20 bg-gradient-to-r from-slate-900 to-transparent z-10"></div>
-             <div className="absolute top-0 bottom-0 right-0 w-20 bg-gradient-to-l from-slate-900 to-transparent z-10"></div>
-
-             <div className="flex w-[200%] animate-marquee gap-6 px-6">
-                {/* Duplicate the children to create the infinite loop effect seamlessly. 
-                    We render 6 mockups total (3 original, 3 duplicated).
-                */}
-                {[1, 2, 3, 1, 2, 3].map((val, idx) => (
-                  <div key={idx} className="w-[300px] sm:w-[350px] h-[350px] bg-slate-800 rounded-2xl flex-shrink-0 border border-slate-700 p-4 flex flex-col gap-4 transform transition-transform hover:scale-[1.02]">
-                    <div className="flex justify-between items-center">
-                      <div className="w-1/2 h-4 rounded-full bg-slate-700"></div>
-                      <div className="w-8 h-8 rounded-full bg-slate-700"></div>
-                    </div>
-                    <div className="w-full h-32 rounded-xl bg-gradient-to-br from-[#03BF1F]/20 to-teal-500/20"></div>
-                    <div className="flex gap-2">
-                       <div className="flex-1 h-20 rounded-xl bg-slate-700/50"></div>
-                       <div className="flex-1 h-20 rounded-xl bg-slate-700/50"></div>
-                    </div>
-                    <div className="w-3/4 h-3 rounded-full bg-slate-600 mt-2"></div>
-                    <div className="w-1/2 h-3 rounded-full bg-slate-700"></div>
-                  </div>
-                ))}
-             </div>
-           </div>
+          {/* Testimonials CTA */}
+          <div className="text-center mt-12 relative z-10">
+             <button 
+               className="px-10 py-4 text-base font-bold bg-white text-slate-900 rounded-xl shadow-xl hover:-translate-y-1 transition-all duration-300" 
+               onClick={() => onOpenModal && onOpenModal()}
+             >
+               {t('communityCta')}
+             </button>
+          </div>
         </div>
       </section>
 

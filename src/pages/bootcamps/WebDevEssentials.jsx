@@ -6,6 +6,15 @@ import { submitToHubspot } from '../../utils/hubspot';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
+
+import javascriptImg from '../../assets/web/javascript.png';
+import reactImg from '../../assets/web/react.png';
+import gitImg from '../../assets/web/git.png';
+import cert1Img from '../../assets/web/certification1.png';
+import cert2Img from '../../assets/web/certification2.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -31,6 +40,15 @@ const ShieldIcon = () => (
   </svg>
 );
 
+const UsersIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="9" cy="7" r="4"></circle>
+    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+  </svg>
+);
+
 const StarIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="text-yellow-400">
     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
@@ -46,25 +64,39 @@ const CheckIcon = () => (
 
 const TESTIMONIALS = [
   {
-    name: 'Sarah M.',
-    role: 'Frontend Developer @ Djezzy',
-    quote: 'Within 3 months of graduating I received two offers. The curriculum is tough but exactly what you need to prepare for the real world.',
+    name: 'Younes A.',
+    role: 'Financier à la Clinique du Val',
+    quote: "La formation était excellente, l'instructeur très pédagogue. Un grand merci à lui et à toute l'équipe Code & Sens.",
     rating: 5,
-    avatar: 'SM',
+    avatar: 'YA',
   },
   {
-    name: 'David K.',
-    role: 'Software Engineer @ Sonatrach Digital',
-    quote: 'The instructors don\'t just teach code, they teach you how to think like an engineer. Best investment I ever made.',
+    name: 'Wassim B.',
+    role: 'Tech Support @ Moneco',
+    quote: "jazt hayle t3lemna bzf 3fays ! J'ai connu beaucoup de gens bien aussi à l'école. Je recommande.",
     rating: 5,
-    avatar: 'DK',
+    avatar: 'WB',
   },
   {
-    name: 'Amina B.',
-    role: 'Fullstack Developer, Freelance',
-    quote: 'The coworking space and incubator access opened doors I didn\'t know existed. I launched my first SaaS product 6 months after bootcamp.',
+    name: 'Manel K.',
+    role: '2nd Year Geology Student @ USTHB',
+    quote: "بدينا موالو م 0 حتا ولينا نخدموا كلش وحدنا المرافقة في الدورة و بعد الدورة كانت رائعة بديت الخدمة بفضلكم شكرا و ربي يوفقكم",
     rating: 5,
-    avatar: 'AB',
+    avatar: 'MK',
+  },
+  {
+    name: 'Mouhamed S.',
+    role: 'Alumni Code & Sens',
+    quote: "La formation était top, la pédagogie d'apprentissage aussi. On apprend avec des projets réels et en pratiquant.",
+    rating: 5,
+    avatar: 'MS',
+  },
+  {
+    name: 'Lydia H.',
+    role: 'Alumni Code & Sens',
+    quote: "Excellent school! Thank you very much for everything and special mention to my group, best people ever ❤️",
+    rating: 5,
+    avatar: 'LH',
   },
 ];
 
@@ -167,10 +199,13 @@ const WebDevEssentials = () => {
     <div className="flex flex-col font-sans" style={pageStyle} ref={containerRef}>
 
       {/* ─── 1. HERO ─────────────────────────────────────────────────────── */}
-      <section className="w-full px-8 lg:px-16 py-4 flex flex-col lg:flex-row items-center justify-between gap-6 min-h-[calc(100vh-5rem)]">
+      <section className="relative w-full px-8 lg:px-16 py-4 flex flex-col lg:flex-row items-center justify-between gap-6 min-h-[calc(100vh-5rem)] overflow-hidden lg:overflow-visible">
+        
+        {/* Animated Background Lights */}
+        <div className="absolute top-20 right-0 lg:right-20 w-80 h-80 bg-[#294CFF] rounded-full mix-blend-multiply filter blur-[100px] opacity-15 animate-blob animation-delay-2000 pointer-events-none z-0"></div>
 
         {/* Left: Text */}
-        <div className="flex-1 space-y-5" style={{ textAlign: isRtl ? 'right' : 'left' }}>
+        <div className="relative z-10 flex-1 space-y-5" style={{ textAlign: isRtl ? 'right' : 'left' }}>
           <div
             className="hero-element inline-flex items-center gap-2 bg-[#294CFF]/10 text-[#294CFF] px-4 py-1.5 rounded-full text-xs font-semibold border border-[#294CFF]/20"
             style={{ flexDirection: isRtl ? 'row-reverse' : 'row' }}
@@ -223,7 +258,7 @@ const WebDevEssentials = () => {
               <div className="w-3 h-3 rounded-full bg-[#ff5f57]"></div>
               <div className="w-3 h-3 rounded-full bg-[#febc2e]"></div>
               <div className="w-3 h-3 rounded-full bg-[#28c840]"></div>
-              <span className="ml-3 text-xs text-slate-500 font-sans">developer.jsx</span>
+              <span className="ml-3 text-xs text-slate-500 font-sans">codeandsens.jsx</span>
             </div>
             <div className="p-6 text-sm text-slate-300 leading-loose font-sans text-left">
               <span className="text-pink-400 font-bold">import</span>{' '}
@@ -232,14 +267,14 @@ const WebDevEssentials = () => {
               <span className="text-orange-300">'react'</span>;
               <br /><br />
               <span className="text-pink-400 font-bold">const</span>{' '}
-              <span className="text-blue-300 font-bold">Developer</span>{' '}
+              <span className="text-blue-300 font-bold">CodeAndSens</span>{' '}
               <span className="text-pink-400 font-bold">= () =&gt;</span> {'{'}
               <br />
               &nbsp;&nbsp;<span className="text-pink-400 font-bold">return</span> (
               <br />
               &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span className="text-indigo-400">Career</span>{' '}
               <span className="text-slate-400">status</span>=
-              <span className="text-orange-300">"launched"</span> /&gt;
+              <span className="text-orange-300">"واش راك تستنى ؟"</span> /&gt;
               <br />
               &nbsp;&nbsp;);
               <br />
@@ -260,18 +295,37 @@ const WebDevEssentials = () => {
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
-            {/* Card 1 */}
+            {/* Card 1: Coworking (Formerly Card 2) */}
+            <div className="feature-card card-clickable bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-lg flex flex-col group">
+              <div className="h-52 flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-cyan-50 to-sky-50">
+                <div className="flex gap-5 items-center">
+                  <div className="w-16 h-16 rounded-2xl bg-cyan-500/10 border border-cyan-400/30 flex items-center justify-center text-cyan-600 shadow-md animate-float" style={{animationDelay: '0s'}}>
+                    <RocketIcon />
+                  </div>
+                  <div className="w-16 h-16 rounded-2xl bg-cyan-500/10 border border-cyan-400/30 flex items-center justify-center text-cyan-600 shadow-md animate-float" style={{animationDelay: '0.3s'}}>
+                    <UsersIcon />
+                  </div>
+                </div>
+              </div>
+              <div className="p-8 flex-1 flex flex-col">
+                <h3 className="text-2xl font-bold font-heading mb-3 group-hover:text-cyan-600 transition-colors">{t('card2Title')}</h3>
+                <p className="text-slate-500 leading-relaxed flex-1 mb-6">{t('card2Desc')}</p>
+                <button className="btn-secondary w-full text-sm uppercase tracking-wider" onClick={() => onOpenModal && onOpenModal()}>{t('card2Cta')}</button>
+              </div>
+            </div>
+
+            {/* Card 2: Modern Tech Stack (Formerly Card 1) */}
             <div className="feature-card card-clickable bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-lg flex flex-col group">
               <div className="h-52 flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-[#294CFF]/10 to-[#294CFF]/5">
                 <div className="flex gap-5 items-center">
-                  <div className="w-16 h-16 rounded-2xl bg-[#61DAFB]/20 border border-[#61DAFB]/30 flex items-center justify-center text-[#294CFF] shadow-md">
-                    <CodeIcon />
+                  <div className="w-16 h-16 rounded-2xl bg-white border border-slate-100 flex items-center justify-center shadow-md animate-float" style={{animationDelay: '0s'}}>
+                    <img src={javascriptImg} alt="JS" className="w-10 h-10 object-contain" />
                   </div>
-                  <div className="w-14 h-14 rounded-xl bg-[#F05032]/10 border border-[#F05032]/30 flex items-center justify-center text-xs font-bold font-heading text-[#F05032]">
-                    GIT
+                  <div className="w-16 h-16 rounded-2xl bg-white border border-slate-100 flex items-center justify-center shadow-md animate-float" style={{animationDelay: '0.2s'}}>
+                    <img src={reactImg} alt="React" className="w-10 h-10 object-contain" />
                   </div>
-                  <div className="w-14 h-14 rounded-xl bg-[#68A063]/10 border border-[#68A063]/30 flex items-center justify-center text-xs font-bold font-heading text-[#68A063]">
-                    NODE
+                  <div className="w-16 h-16 rounded-2xl bg-white border border-slate-100 flex items-center justify-center shadow-md animate-float" style={{animationDelay: '0.4s'}}>
+                    <img src={gitImg} alt="Git" className="w-10 h-10 object-contain" />
                   </div>
                 </div>
               </div>
@@ -282,31 +336,16 @@ const WebDevEssentials = () => {
               </div>
             </div>
 
-            {/* Card 2 */}
-            <div className="feature-card card-clickable bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-lg flex flex-col group">
-              <div className="h-52 flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-cyan-50 to-sky-50">
-                <div className="text-center">
-                  <div className="w-20 h-20 rounded-2xl bg-cyan-500/10 border border-cyan-400/30 flex items-center justify-center text-cyan-600 mx-auto shadow-md group-hover:scale-110 transition-transform duration-300">
-                    <RocketIcon />
-                  </div>
-                  <p className="text-xs text-slate-400 mt-3 font-sans">Coworking + Incubator</p>
-                </div>
-              </div>
-              <div className="p-8 flex-1 flex flex-col">
-                <h3 className="text-2xl font-bold font-heading mb-3 group-hover:text-cyan-600 transition-colors">{t('card2Title')}</h3>
-                <p className="text-slate-500 leading-relaxed flex-1 mb-6">{t('card2Desc')}</p>
-                <button className="btn-secondary w-full text-sm uppercase tracking-wider" onClick={() => onOpenModal && onOpenModal()}>{t('card2Cta')}</button>
-              </div>
-            </div>
-
-            {/* Card 3 */}
+            {/* Card 3: Certifications */}
             <div className="feature-card card-clickable bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-lg flex flex-col group">
               <div className="h-52 flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-indigo-50 to-violet-50">
-                <div className="text-center">
-                  <div className="w-20 h-20 rounded-full bg-indigo-500/10 border border-indigo-400/30 flex items-center justify-center text-indigo-600 mx-auto shadow-md group-hover:scale-110 transition-transform duration-300">
-                    <ShieldIcon />
+                <div className="flex gap-5 items-center">
+                  <div className="w-20 h-20 rounded-2xl bg-white border border-slate-100 flex items-center justify-center shadow-md animate-float" style={{animationDelay: '0s'}}>
+                    <img src={cert1Img} alt="Cert 1" className="w-14 h-14 object-contain" />
                   </div>
-                  <p className="text-xs text-slate-400 mt-3 font-sans">Recognized Certifications</p>
+                  <div className="w-20 h-20 rounded-2xl bg-white border border-slate-100 flex items-center justify-center shadow-md animate-float" style={{animationDelay: '0.3s'}}>
+                    <img src={cert2Img} alt="Cert 2" className="w-14 h-14 object-contain" />
+                  </div>
                 </div>
               </div>
               <div className="p-8 flex-1 flex flex-col">
@@ -382,34 +421,58 @@ const WebDevEssentials = () => {
                 {[1,2,3,4,5].map(i => <StarIcon key={i} />)}
               </div>
               <span className="text-lg font-semibold">4.9</span>
-              <span className="text-white/50">· 2,450+ graduates</span>
+              <span className="text-white/50">· 160+ graduates</span>
             </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {TESTIMONIALS.map((testimonial, i) => (
-              <div
-                key={i}
-                className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:-translate-y-1"
-              >
-                <div className="flex items-center gap-1 mb-5">
-                  {[...Array(testimonial.rating)].map((_, j) => <StarIcon key={j} />)}
-                </div>
-                <p className="text-white/90 text-sm leading-relaxed mb-7 italic">"{testimonial.quote}"</p>
-                <div className="flex items-center gap-3">
-                  <div
-                    className="w-10 h-10 rounded-full flex items-center justify-center text-white text-xs font-bold font-heading flex-shrink-0"
-                    style={{ background: 'rgba(255,255,255,0.2)' }}
-                  >
-                    {testimonial.avatar}
+          <div className="w-full" dir="ltr">
+            <Swiper
+              modules={[Autoplay]}
+              grabCursor={true}
+              centeredSlides={true}
+              slidesPerView={'auto'}
+              loop={true}
+              autoplay={{ delay: 7000, disableOnInteraction: false }}
+              breakpoints={{
+                320: { slidesPerView: 1, spaceBetween: 20 },
+                768: { slidesPerView: 1.5, spaceBetween: 30 },
+                1024: { slidesPerView: 3, spaceBetween: 40 },
+              }}
+              className="testimonials-swiper !pb-12 px-4"
+            >
+              {[...TESTIMONIALS, ...TESTIMONIALS].map((testimonial, i) => (
+                <SwiperSlide key={i} className="!h-auto flex max-w-[400px]">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 transition-all duration-500 flex flex-col w-full h-full">
+                    <div className="flex items-center gap-1 mb-5">
+                      {[...Array(testimonial.rating)].map((_, j) => <StarIcon key={j} />)}
+                    </div>
+                    <p className="text-white/90 text-sm leading-relaxed mb-7 italic flex-1">"{testimonial.quote}"</p>
+                    <div className="flex items-center gap-3">
+                      <div
+                        className="w-10 h-10 rounded-full flex items-center justify-center text-white text-xs font-bold font-heading flex-shrink-0"
+                        style={{ background: 'rgba(255,255,255,0.2)' }}
+                      >
+                        {testimonial.avatar}
+                      </div>
+                      <div>
+                        <div className="text-white font-semibold text-sm">{testimonial.name}</div>
+                        <div className="text-white/60 text-xs">{testimonial.role}</div>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <div className="text-white font-semibold text-sm">{testimonial.name}</div>
-                    <div className="text-white/60 text-xs">{testimonial.role}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+
+          {/* Testimonials CTA */}
+          <div className="text-center mt-12 relative z-10">
+             <button 
+               className="btn-primary bg-white text-[var(--page-primary,#4F46E5)] px-10 py-4 text-base font-bold rounded-xl shadow-xl hover:-translate-y-1 transition-all duration-300" 
+               onClick={() => onOpenModal && onOpenModal()}
+             >
+               {t('communityCta')}
+             </button>
           </div>
         </div>
       </section>
@@ -462,7 +525,7 @@ const WebDevEssentials = () => {
                 </div>
                 <div className="space-y-1.5">
                   <label htmlFor="email" className="text-sm font-semibold text-slate-600">{t('formEmail')}</label>
-                  <input type="email" id="email" className="input w-full" placeholder="ahmed@example.com" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} required />
+                  <input type="email" id="email" className="input w-full" placeholder="codeandsens@contact.com" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} required />
                 </div>
                 <div className="space-y-1.5">
                   <label htmlFor="phone" className="text-sm font-semibold text-slate-600">{t('formPhone')}</label>
@@ -470,7 +533,7 @@ const WebDevEssentials = () => {
                     <span className="inline-flex items-center px-4 rounded-l-lg border border-r-0 border-slate-200 bg-slate-50 text-slate-500 text-sm font-sans flex-shrink-0">
                       +213
                     </span>
-                    <input type="tel" id="phone" className="input rounded-l-none w-full" placeholder="555 123 456" value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} required />
+                    <input type="tel" id="phone" className="input rounded-l-none w-full" placeholder="0668 30 15 69" value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} required />
                   </div>
                 </div>
                 <button

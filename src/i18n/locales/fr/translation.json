@@ -2,14 +2,15 @@
   "title": "Bienvenue au Bootcamp Web",
   "placeholder": "Contenu temporaire. Ce texte est en français.",
   "freeAppointment": "Rendez-vous gratuit",
-  "bootcampTag": "Nouveau : Cohorte 2026 — Candidatures ouvertes",
+  "bootcampTag": "Nouveau : Session 2026 — Candidatures ouvertes",
+  "communityCta": "Devenez membre de la communauté ✦",
   "heroTitle1": "Maîtrisez le",
   "heroHighlight": "Code.",
   "heroTitle2": "Construisez l'avenir.",
   "heroSubtitle": "Bootcamp intensif de développement web conçu pour un apprentissage rapide et des carrières à fort impact. Devenez opérationnel en 12 semaines.",
   "heroCta1": "Commencer",
   "heroCta2": "Voir le programme",
-  "heroRating": "plus de 2 450 diplômés",
+  "heroRating": "plus de 160 diplômés",
   "featuresTitle": "Tout ce dont vous avez besoin",
   "featuresSubtitle": "Notre programme est conçu par des professionnels, pour les professionnels de demain.",
   "card1Title": "Stack Moderne",
@@ -108,42 +109,42 @@
   "uiuxCurriculumModules": [
     {
       "week": "Semaines 1–3",
-      "title": "Fondamentaux du Design & Intro UX",
+      "title": "Intro UX, Recherche & Analyse",
       "topics": [
-        "Théorie des couleurs, typographie et espacement",
-        "Introduction aux lois de l'UX et aux heuristiques",
-        "Bases du Wireframing et parcours utilisateurs",
-        "Bases de Figma et navigation dans l'interface"
+        "Différence UX/UI et design centré utilisateur",
+        "Méthodes de recherche et création de personas",
+        "Interviews utilisateurs et observation des besoins",
+        "User Journey Map et analyse des concurrents"
       ]
     },
     {
       "week": "Semaines 4–6",
-      "title": "UI Avancée & Design Systems",
+      "title": "Idéation, Architecture & Wireframing",
       "topics": [
-        "Auto-Layout Figma et composants complexes",
-        "Création de Design Systems complets",
-        "Variables, tokens et design en mode sombre",
-        "Responsive design et approche mobile-first"
+        "Brainstorming, User Flow et définition du MVP",
+        "Structuration (Sitemap) et parcours utilisateur",
+        "Création de wireframes basse fidélité sur Figma",
+        "Tests de disposition et cohérence de navigation"
       ]
     },
     {
       "week": "Semaines 7–9",
-      "title": "Recherche Utilisateur & Tests",
+      "title": "UI Design, Systèmes & Haute Fidélité",
       "topics": [
-        "Mener des interviews utilisateurs & sondages",
-        "Création de personas & journey maps",
-        "A/B testing et design axé sur la donnée",
-        "Meilleures pratiques des tests d'utilisabilité"
+        "Couleurs, typographie, espacement et layout",
+        "Création d'un UI Kit et de composants",
+        "Organisation d'un Design System dans Figma",
+        "Maquettes UI haute fidélité et esthétique"
       ]
     },
     {
       "week": "Semaines 10–12",
-      "title": "Prototypage & Création de Portfolio",
+      "title": "Prototypage, Tests & Projet Final",
       "topics": [
-        "Prototypage et animations Figma avancées",
-        "Workflows de transfert (handoff) développeur",
-        "Rédaction de votre Étude de Cas UX définitive",
-        "Création du portfolio et préparation aux entretiens"
+        "Création de prototypes interactifs fluides",
+        "Tests utilisateurs et priorisation des corrections",
+        "Itérations d'amélioration du design",
+        "Projet final complet : UX Case Study"
       ]
     }
   ],
