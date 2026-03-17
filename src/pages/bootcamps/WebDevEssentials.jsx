@@ -475,7 +475,8 @@ const WebDevEssentials = () => {
                 </div>
                 <button
                   type="submit"
-                  className="btn-primary w-full py-4 text-base mt-2 shadow-lg"
+                  disabled={!formData.name || !formData.email || !formData.phone}
+                  className="btn-primary w-full py-4 text-base mt-2 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100 disabled:hover:-translate-y-0"
                   style={{ boxShadow: '0 8px 32px #294CFF33' }}
                 >
                   {t('formSubmit')}

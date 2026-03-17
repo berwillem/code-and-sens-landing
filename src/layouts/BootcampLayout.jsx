@@ -105,7 +105,8 @@ const BootcampLayout = () => {
                   </div>
                   <button
                     type="submit"
-                    className="w-full sm:w-auto px-6 py-3 md:py-2.5 bg-white rounded-xl sm:rounded-l-none text-base md:text-sm font-bold flex items-center justify-center transition-opacity hover:opacity-90 shadow-sm"
+                    disabled={!phone.trim()}
+                    className="w-full sm:w-auto px-6 py-3 md:py-2.5 bg-white rounded-xl sm:rounded-l-none text-base md:text-sm font-bold flex items-center justify-center transition-opacity hover:opacity-90 shadow-sm disabled:opacity-50 disabled:cursor-not-allowed"
                     style={{ color: primaryColor }}
                   >
                     {t('footerCallbackBtn', 'Send')}

@@ -1,7 +1,8 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useOutletContext, useLocation } from 'react-router-dom';
 import i18n from '../../i18n/i18n';
+import { submitToHubspot } from '../../utils/hubspot';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -40,9 +41,12 @@ const StarIcon = () => (
 const UIUXDesign = () => {
   const { t } = useTranslation();
   const { onOpenModal } = useOutletContext();
+  const location = useLocation();
   const isRtl = i18n.dir(i18n.language) === 'rtl';
   const primaryColor = '#03BF1F';
   const pageStyle = { '--page-primary': primaryColor };
+  
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '' });
   
   const containerRef = useRef(null);
   const featuresRef = useRef(null);
@@ -448,6 +452,79 @@ const UIUXDesign = () => {
              >
                 {t('uiuxCurriculumCta')}
              </button>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── 5. CONTACT FORM ─────────────────────────────────────────────── */}
+      <section className="py-24 bg-slate-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row border border-slate-100">
+            {/* Left info panel */}
+            <div
+              className="md:w-2/5 p-10 md:p-14 flex flex-col justify-center"
+              style={{ background: `linear-gradient(135deg, ${primaryColor} 0%, #028e17 100%)` }}
+            >
+              <h2 className="text-3xl lg:text-4xl font-bold font-heading text-white leading-tight mb-5">
+                {t('contactTitle')}
+              </h2>
+              <p className="text-white/80 text-base leading-relaxed mb-8">
+                {t('contactSubtitle')}
+              </p>
+              <ul className="space-y-3">
+                {[t('contactCheck1'), t('contactCheck2'), t('contactCheck3')].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-white/90 text-sm">
+                    <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                      <CheckIcon />
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Right form — always LTR layout */}
+            <div className="md:w-3/5 p-10 md:p-14">
+              <h3 className="text-xl font-bold font-heading mb-8 text-slate-800">{t('formTitle')}</h3>
+              <form className="space-y-5" onSubmit={async (e) => { 
+                e.preventDefault(); 
+                const success = await submitToHubspot(
+                  { name: formData.name, email: formData.email, phone: formData.phone }, 
+                  location.pathname, 
+                  t('contactTitle', 'Bootcamp Contact'),
+                  t
+                );
+                if (success) {
+                  setFormData({ name: '', email: '', phone: '' });
+                }
+              }}>
+                <div className="space-y-1.5">
+                  <label htmlFor="name" className="text-sm font-semibold text-slate-600">{t('formName')}</label>
+                  <input type="text" id="name" className="input w-full" placeholder="Ahmed Benali" value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} required />
+                </div>
+                <div className="space-y-1.5">
+                  <label htmlFor="email" className="text-sm font-semibold text-slate-600">{t('formEmail')}</label>
+                  <input type="email" id="email" className="input w-full" placeholder="ahmed@example.com" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} required />
+                </div>
+                <div className="space-y-1.5">
+                  <label htmlFor="phone" className="text-sm font-semibold text-slate-600">{t('formPhone')}</label>
+                  <div className="flex" dir="ltr">
+                    <span className="inline-flex items-center px-4 rounded-l-lg border border-r-0 border-slate-200 bg-slate-50 text-slate-500 text-sm font-sans flex-shrink-0">
+                      +213
+                    </span>
+                    <input type="tel" id="phone" className="input rounded-l-none w-full" placeholder="555 123 456" value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} required />
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  disabled={!formData.name || !formData.email || !formData.phone}
+                  className="btn-primary w-full py-4 text-base mt-2 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100 disabled:hover:-translate-y-0"
+                  style={{ boxShadow: `0 8px 32px ${primaryColor}33`, backgroundColor: primaryColor }}
+                >
+                  {t('formSubmit')}
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </section>

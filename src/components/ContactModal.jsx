@@ -118,7 +118,8 @@ const ContactModal = ({ isOpen, onClose, primaryColor, customTitle }) => {
             </div>
             <button
               type="submit"
-              className="w-full py-4 text-white text-base font-bold rounded-xl mt-2 shadow-lg hover:opacity-90 transition-all duration-300 active:scale-95"
+              disabled={!formData.name || !formData.email || !formData.phone}
+              className="w-full py-4 text-white text-base font-bold rounded-xl mt-2 shadow-lg hover:opacity-90 transition-all duration-300 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100 disabled:hover:opacity-50"
               style={{ backgroundColor: primaryColor, boxShadow: `0 8px 32px ${primaryColor}40` }}
             >
               {t('formSubmit')}
