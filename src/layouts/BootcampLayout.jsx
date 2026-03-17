@@ -41,7 +41,7 @@ const BootcampLayout = () => {
     e.preventDefault();
     if (phone.trim()) {
       const success = await submitToHubspot(
-        { phone },
+        { phone, name: 'unknown', email: 'unknown' },
         location.pathname,
         'Footer Lead Capture',
         t

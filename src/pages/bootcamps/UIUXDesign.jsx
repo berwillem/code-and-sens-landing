@@ -234,7 +234,7 @@ const UIUXDesign = () => {
       </style>
 
       {/* ─── 1. HERO ─────────────────────────────────────────────────────── */}
-      <section className="relative w-full px-8 lg:px-16 py-8 flex flex-col lg:flex-row items-center justify-between gap-6 min-h-[calc(100vh-5rem)]">
+      <section className="relative w-full px-6 lg:px-16 pt-10 pb-20 lg:py-8 flex flex-col lg:flex-row items-center justify-between gap-10 min-h-[calc(100vh-5rem)] overflow-visible">
         
         {/* Left: Text */}
         <div className="flex-1 space-y-5" style={{ textAlign: isRtl ? 'right' : 'left' }}>
@@ -246,7 +246,7 @@ const UIUXDesign = () => {
             {t('bootcampTag')}
           </div>
 
-          <h1 className="hero-element text-5xl md:text-6xl lg:text-7xl font-bold leading-tight font-heading">
+          <h1 className="hero-element text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight font-heading">
             {t('uiuxHeroTitle1')}{' '}
             <span style={{ color: primaryColor }}>{t('uiuxHeroHighlight')}</span>
             <br />{t('uiuxHeroTitle2')}
@@ -287,11 +287,11 @@ const UIUXDesign = () => {
         </div>
 
         {/* Right: Creative Visual Container */}
-        <div className="hero-element flex-1 w-full max-w-[320px] sm:max-w-md md:max-w-lg mx-auto relative group h-[340px] lg:h-96 mt-12 mb-28 lg:my-0">
+        <div className="hero-element flex-1 w-full max-w-sm sm:max-w-md md:max-w-lg mx-auto relative group mt-8 mb-10 lg:my-0 px-6 sm:px-0">
           <div className="absolute inset-0 bg-gradient-to-tr from-[#03BF1F]/20 to-transparent rounded-[3rem] transform rotate-3 scale-105 transition-transform duration-700 group-hover:rotate-6 group-hover:scale-110 blur-2xl"></div>
           
           {/* Main Floating Mockup */}
-          <div className="absolute inset-0 bg-white rounded-[2rem] border border-slate-100 shadow-2xl p-6 flex flex-col gap-4 transform -rotate-2 transition-transform duration-500 group-hover:-rotate-1 z-10 overflow-hidden">
+          <div className="relative bg-white rounded-[2rem] border border-slate-100 shadow-2xl p-5 sm:p-6 flex flex-col gap-4 transform -rotate-1 sm:-rotate-2 transition-transform duration-500 group-hover:rotate-0 z-10 overflow-hidden">
             {/* Fake UI Header */}
             <div className="flex items-center justify-between">
               <div className="flex gap-2">
@@ -322,21 +322,21 @@ const UIUXDesign = () => {
           {/* Floating UI Elements */}
           <div 
             ref={el => el && floatingIconsRef.current.push(el)}
-            className="absolute -right-6 md:-right-12 top-10 w-20 h-20 md:w-32 md:h-32 z-20 flex items-center justify-center p-3 md:p-4 rounded-[1.5rem] md:rounded-[2rem] bg-white border border-slate-100 shadow-2xl backdrop-blur-sm"
+            className="absolute -right-2 sm:-right-8 top-6 w-14 h-14 sm:w-20 sm:h-20 z-20 flex items-center justify-center p-3 rounded-[1.5rem] bg-white border border-slate-100 shadow-2xl backdrop-blur-sm"
           >
             <img src={figmaIcon} alt="Figma" className="w-full h-full object-contain drop-shadow-md" />
           </div>
 
           <div 
             ref={el => el && floatingIconsRef.current.push(el)}
-            className="absolute -left-6 md:-left-8 top-32 w-16 h-16 md:w-24 md:h-24 z-20 flex items-center justify-center p-2.5 md:p-3.5 rounded-xl md:rounded-[1.5rem] bg-white border border-slate-100 shadow-xl backdrop-blur-sm"
+            className="absolute -left-2 sm:-left-6 top-24 w-12 h-12 sm:w-16 sm:h-16 z-20 flex items-center justify-center p-2.5 rounded-xl bg-white border border-slate-100 shadow-xl backdrop-blur-sm"
           >
              <img src={aiIcon} alt="Illustrator" className="w-full h-full object-contain drop-shadow-md" />
           </div>
 
           <div 
             ref={el => el && floatingIconsRef.current.push(el)}
-            className="absolute right-10 -bottom-6 md:-bottom-8 w-16 h-16 md:w-28 md:h-28 z-20 flex items-center justify-center p-2.5 md:p-3.5 rounded-xl md:rounded-[1.5rem] bg-white border border-slate-100 shadow-xl backdrop-blur-sm"
+            className="absolute right-6 sm:right-10 -bottom-5 w-12 h-12 sm:w-16 sm:h-16 z-20 flex items-center justify-center p-2.5 rounded-xl bg-white border border-slate-100 shadow-xl backdrop-blur-sm"
           >
              <img src={psIcon} alt="Photoshop" className="w-full h-full object-contain drop-shadow-md" />
           </div>

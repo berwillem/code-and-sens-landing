@@ -45,16 +45,16 @@ const ContactModal = ({ isOpen, onClose, primaryColor, customTitle }) => {
 
       {/* Modal Content */}
       <div 
-        className={`relative w-full max-w-5xl bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row border border-slate-100 transition-transform duration-300 ${
+        className={`relative w-full max-w-5xl bg-white rounded-3xl shadow-2xl overflow-y-auto flex flex-col md:flex-row border border-slate-100 transition-transform duration-300 ${
           isOpen ? 'scale-100 translate-y-0' : 'scale-95 translate-y-4'
         }`}
         dir={isRtl ? 'rtl' : 'ltr'}
         style={{ maxHeight: 'calc(100vh - 2rem)' }}
       >
-        {/* Close Button */}
+        {/* Close Button — hidden on mobile, visible sm+ */}
         <button 
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 w-10 h-10 bg-black/10 hover:bg-black/20 text-white rounded-full flex items-center justify-center transition-colors shadow-sm"
+          className="absolute top-4 right-4 z-10 w-10 h-10 bg-black/10 hover:bg-black/20 text-white rounded-full hidden sm:flex items-center justify-center transition-colors shadow-sm"
           style={{ [isRtl ? 'left' : '1rem']: '1rem', [isRtl ? 'right' : 'auto']: 'auto' }}
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -65,16 +65,16 @@ const ContactModal = ({ isOpen, onClose, primaryColor, customTitle }) => {
 
         {/* Left info panel */}
         <div
-          className="md:w-2/5 p-8 md:p-12 flex flex-col justify-center overflow-y-auto"
+          className="md:w-2/5 p-5 sm:p-8 md:p-12 flex flex-col justify-center"
           style={{ background: `linear-gradient(135deg, ${primaryColor} 0%, ${primaryColor}dd 100%)` }}
         >
-          <h2 className="text-3xl lg:text-4xl font-bold font-heading text-white leading-tight mb-5">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-heading text-white leading-tight mb-4">
             {customTitle || t('contactTitle')}
           </h2>
-          <p className="text-white/80 text-base leading-relaxed mb-8">
+          <p className="text-white/80 text-sm sm:text-base leading-relaxed mb-6">
             {t('contactSubtitle')}
           </p>
-          <ul className="space-y-3">
+          <ul className="space-y-2">
             {[t('contactCheck1'), t('contactCheck2'), t('contactCheck3')].map((item, i) => (
               <li key={i} className="flex items-center gap-3 text-white/90 text-sm">
                 <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
@@ -87,8 +87,8 @@ const ContactModal = ({ isOpen, onClose, primaryColor, customTitle }) => {
         </div>
 
         {/* Right form */}
-        <div className="md:w-3/5 p-8 md:p-12 overflow-y-auto">
-          <h3 className="text-xl font-bold font-heading mb-8 text-slate-800">{t('formTitle')}</h3>
+        <div className="md:w-3/5 p-5 sm:p-8 md:p-12">
+          <h3 className="text-lg sm:text-xl font-bold font-heading mb-6 text-slate-800">{t('formTitle')}</h3>
           <form className="space-y-5" onSubmit={async (e) => { 
             e.preventDefault(); 
             const success = await submitToHubspot(

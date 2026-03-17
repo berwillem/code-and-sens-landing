@@ -22,9 +22,9 @@ export const submitToHubspot = async (data, pathname, pageName, t) => {
     category = "Data and AI";
     training = "Power BI";
   } else if (pathname.includes("cybersecurity")) {
-    category = "Cybersecurity";
+    category = "Cyber security";
     training = pathname.includes("introduction") 
-      ? "Cybersecurity Introduction" 
+      ? "CyberStarter" 
       : "Cybersecurity Bootcamp";
   }
 
