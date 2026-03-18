@@ -216,5 +216,107 @@
     { "week": "Week 14", "title": "Introduction to Blue Team", "topics": ["Role of defense teams", "Security monitoring", "Log and event analysis", "Introduction to defense tools"] },
     { "week": "Week 15", "title": "Infrastructure Security", "topics": ["Firewall and network security", "IDS and IPS systems", "Endpoint security", "System hardening best practices"] },
     { "week": "Week 16", "title": "Advanced Labs & Career Prep", "topics": ["Red Team vs Blue Team scenarios", "Practical exercises and attack simulations", "Intro to Threat Intelligence and forensics", "Certification and cybersecurity career prep"] }
+  ],
+  "genaiTag": "8-Week Programme — Generative AI & Automation",
+  "genaiHeroTitle1": "Master Generative",
+  "genaiHeroHighlight": "AI",
+  "genaiHeroTitle2": "& Automation.",
+  "genaiHeroSubtitle": "Radically transform your productivity in 8 weeks. Learn to harness ChatGPT, automate your workflows with n8n and Microsoft 365, and multiply your professional output by 10.",
+  "genaiHeroChatMsg1": "Generate a weekly marketing report automatically.",
+  "genaiHeroChatMsg2": "Report generated. n8n workflow triggered. 4 tasks automated.",
+  "genaiStatLabel1": "Productivity boost",
+  "genaiStatLabel2": "Intensive weeks",
+  "genaiFeaturesTitle": "Everything You Need to Automate Your Success",
+  "genaiFeaturesSubtitle": "A hands-on programme to master generative AI and automate your business tasks — no coding background needed.",
+  "genaiCard1Subtitle": "Core Skill",
+  "genaiCard1Title": "Prompt Engineering",
+  "genaiCard1Desc": "Master the art of talking to AI. Craft precise prompts, use Persona models and Few-Shot techniques to get professional-grade results every single time.",
+  "genaiCard2Title": "Automation & Workflows",
+  "genaiCard2Desc": "Connect your tools, eliminate repetitive tasks, and build smart pipelines with n8n, Make and APIs. Save hours every week through intelligent automation.",
+  "genaiCard3Title": "AI for Business",
+  "genaiCard3Desc": "Concretely apply AI to digital marketing, content generation, SEO, and creating professional slides and videos.",
+  "genaiCard4Title": "Real & Measurable Impact",
+  "genaiCard4Desc": "Hands-on projects from Week 1. Automate emails, generate reports, create content at scale — and show tangible results.",
+  "genaiTestimonialsTitle": "What Our Students Say",
+  "genaiCurriculumTitle": "8 Weeks to Master AI & Automation",
+  "genaiCurriculumSubtitle": "A structured, hands-on journey from beginner to expert in generative AI and business task automation.",
+  "genaiCurriculumCta": "Download Full Syllabus",
+  "genaiContactSubtitle": "Ready to 10x your productivity? Leave us your details and one of our advisors will reach out within 24 hours.",
+  "genaiContactCheck3": "Next AI cohort — April 2026",
+  "genaiCurriculumModules": [
+    { "week": "Week 1", "title": "Discovering the World of AI", "topics": ["Introduction to AI and how models work", "Overview of generative AI and LLMs (ChatGPT, Grok, Qwen)", "Understanding business use cases and productivity gains", "First steps with popular AI tools"] },
+    { "week": "Week 2", "title": "Prompt Engineering", "topics": ["How to create and structure effective prompts", "Persona model concepts and AI customisation", "Prompt limitations and how to work around them", "Reformulation and iteration techniques"] },
+    { "week": "Week 3", "title": "Cognitive Verification & Persona Audience", "topics": ["Techniques to validate AI responses", "Adapting content for a target audience", "Detecting hallucinations and fact-checking", "Building responses suited to different contexts"] },
+    { "week": "Week 4", "title": "Advanced Prompt Models", "topics": ["Few-Shot Learning to guide the AI", "Chain-of-Thought reasoning techniques", "Learning models to improve response quality", "Reusable prompt templates for business"] },
+    { "week": "Week 5", "title": "Advanced AI Capabilities", "topics": ["Using AI to analyse images, PDFs, and links", "Automating complex tasks with AI", "Generating slides, videos, and visual content", "Introduction to AI-assisted programming"] },
+    { "week": "Week 6", "title": "Automation & n8n", "topics": ["Intro to low-code automation with n8n", "Building workflows and integrating APIs & external services", "Automating emails, notifications, and data processing", "Practical case: automated content pipeline"] },
+    { "week": "Week 7", "title": "Microsoft Office 365 with AI", "topics": ["Using AI in Word, Excel, PowerPoint, and Outlook", "Automation via Microsoft Power Automate", "Generating professional documents, reports and presentations", "Copilot 365: advanced enterprise use cases"] },
+    { "week": "Week 8", "title": "Digital Marketing with AI", "topics": ["Applying AI to improve SEO and visibility", "Content creation, copywriting, and editorial strategy", "AI-assisted advertising campaign management", "Generating professional marketing slides and videos"] }
+  ],
+  "pbiTag": "12-Week Programme — Data & Power BI",
+  "pbiHeroTitle1": "Master Data",
+  "pbiHeroHighlight": "Analytics",
+  "pbiHeroTitle2": "with Power BI.",
+  "pbiHeroSubtitle": "Turn raw data into powerful strategic decisions. Master Power BI, DAX and Power Query to build professional dashboards and earn the PL-300 certification.",
+  "pbiStatLabel1": "Intensive weeks",
+  "pbiStatLabel2": "Certification prep",
+  "pbiFeaturesTitle": "Everything You Need to Become a Data Analyst",
+  "pbiFeaturesSubtitle": "A complete programme covering data collection, transformation, modelling and visualisation — all the way to certification.",
+  "pbiCard1Subtitle": "#1 BI Tool",
+  "pbiCard1Title": "Power BI Mastery",
+  "pbiCard1Desc": "Connect your data, build robust models and create interactive dashboards that speak to your decision-makers — all without writing a single line of code.",
+  "pbiCard2Title": "Power Query & DAX",
+  "pbiCard2Desc": "Clean and transform any data source with Power Query. Create advanced calculations and dynamic KPIs with the DAX language for ever-sharper insights.",
+  "pbiCard3Title": "Visualisation & Storytelling",
+  "pbiCard3Desc": "Build impactful charts, interactive drill-down reports and dashboards that tell a clear story using BI data visualisation UX/UI best practices.",
+  "pbiCard4Title": "PL-300 Certification",
+  "pbiCard4Desc": "Prepare for the Microsoft Power BI Data Analyst certification (PL-300) with exam-style practice cases and a full end-to-end data analysis project.",
+  "pbiTestimonialsTitle": "What Our Students Say",
+  "pbiCurriculumTitle": "12 Weeks to Power BI Mastery",
+  "pbiCurriculumSubtitle": "A structured journey from raw data to published professional report — including PL-300 certification preparation.",
+  "pbiCurriculumCta": "Download Full Syllabus",
+  "pbiContactSubtitle": "Ready to turn your data into a competitive advantage? Leave us your details and one of our advisors will reach out within 24h.",
+  "pbiContactCheck3": "PL-300 certification prep included",
+  "pbiCurriculumModules": [
+    {
+      "week": "Phase 1 — Weeks 1-3",
+      "title": "Foundations: Data, Power BI & Power Query",
+      "topics": [
+        "Data analysis fundamentals and the data analyst role",
+        "Discovering Power BI Desktop and its ecosystem",
+        "Connecting to data sources (Excel, CSV, databases, web)",
+        "Cleaning and transforming data with Power Query (M language)"
+      ]
+    },
+    {
+      "week": "Phase 2 — Weeks 4-6",
+      "title": "Data Modelling & DAX Calculations",
+      "topics": [
+        "Creating table relationships and star schema",
+        "Optimising the data model for performance",
+        "Introduction to DAX: calculated columns and simple measures",
+        "Advanced DAX: CALCULATE, FILTER, Time Intelligence (YTD, MTD)"
+      ]
+    },
+    {
+      "week": "Phase 3 — Weeks 7-9",
+      "title": "Visualisation, Reports & Optimisation",
+      "topics": [
+        "Building charts and UX/UI best practices for data viz",
+        "Interactive dashboards, drill-down, slicers and storytelling",
+        "Page navigation and bookmarks for dynamic reports",
+        "Performance optimisation and the Performance Analyzer"
+      ]
+    },
+    {
+      "week": "Phase 4 — Weeks 10-12",
+      "title": "Publishing, Governance & Final Project",
+      "topics": [
+        "Publishing to Power BI Service and managing workspaces",
+        "Sharing, collaboration and scheduling data refreshes",
+        "Data security: Row-Level Security (RLS) and governance",
+        "Complete end-to-end data analysis project — raw data to published report"
+      ]
+    }
   ]
 }

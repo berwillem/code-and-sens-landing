@@ -20,8 +20,8 @@ const Navbar = ({ onOpenModal }) => {
     '/bootcamps/ecommerce':                  { bgClass: 'bg-white/95',      primaryHex: '#EAB308', textClass: 'text-slate-900' },
     '/bootcamps/cybersecurity-bootcamp':     { bgClass: 'bg-slate-900/95',  primaryHex: '#EF4444', textClass: 'text-white' },
     '/bootcamps/cybersecurity-introduction': { bgClass: 'bg-slate-900/95',  primaryHex: '#EF4444', textClass: 'text-white' },
-    '/bootcamps/generative-ai-automation':   { bgClass: 'bg-white/95',      primaryHex: '#9333EA', textClass: 'text-slate-900' },
-    '/bootcamps/power-bi':                   { bgClass: 'bg-white/95',      primaryHex: '#2563EB', textClass: 'text-slate-900' },
+    '/bootcamps/generative-ai-automation':   { bgClass: 'bg-white/95',      primaryHex: '#8C00FF', textClass: 'text-slate-900' },
+    '/bootcamps/power-bi':                   { bgClass: 'bg-white/95',      primaryHex: '#8C00FF', textClass: 'text-slate-900' },
     '/bootcamps/ui-ux-design':               { bgClass: 'bg-white/95',      primaryHex: '#03BF1F', textClass: 'text-slate-900' },
     '/bootcamps/web-dev-essentials':         { bgClass: 'bg-white/95',      primaryHex: '#294CFF', textClass: 'text-slate-900' },
   };

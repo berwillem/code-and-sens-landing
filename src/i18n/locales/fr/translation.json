@@ -216,5 +216,179 @@
     { "week": "Semaine 14", "title": "Introduction au Blue Team", "topics": ["Rôle des équipes de défense", "Surveillance de la sécurité", "Analyse des logs et événements", "Introduction aux outils de défense"] },
     { "week": "Semaine 15", "title": "Sécurité des infrastructures", "topics": ["Pare-feu et sécurité réseau", "IDS et IPS", "Sécurité des endpoints", "Bonnes pratiques de sécurisation des systèmes"] },
     { "week": "Semaine 16", "title": "Labs avancés et préparation carrière", "topics": ["Scénarios Red Team vs Blue Team", "Exercices pratiques et simulations d'attaque", "Introduction à la Threat Intelligence et à la forensique", "Préparation aux certifications et carrières en cybersécurité"] }
+  ],
+  "genaiTag": "Programme 8 Semaines — IA Générative & Automation",
+  "genaiHeroTitle1": "Maîtrisez l'IA",
+  "genaiHeroHighlight": "Générative",
+  "genaiHeroTitle2": "& l'Automation.",
+  "genaiHeroSubtitle": "Transformez radicalement votre productivité en 8 semaines. Apprenez à exploiter ChatGPT, automatiser vos workflows avec n8n et Microsoft 365 pour multiplier votre impact professionnel par 10.",
+  "genaiHeroChatMsg1": "Génère un rapport marketing hebdomadaire automatiquement.",
+  "genaiHeroChatMsg2": "Rapport généré. Workflow n8n déclenché. 4 tâches automatisées.",
+  "genaiStatLabel1": "Productivité augmentée",
+  "genaiStatLabel2": "Semaines intensives",
+  "genaiFeaturesTitle": "Tout ce dont vous avez besoin pour automatiser votre succès",
+  "genaiFeaturesSubtitle": "Un programme pratique pour maîtriser l'IA générative et automatiser vos tâches métier — sans être développeur.",
+  "genaiCard1Subtitle": "Compétence clé",
+  "genaiCard1Title": "Prompt Engineering",
+  "genaiCard1Desc": "Maîtrisez l'art de communiquer avec l'IA. Créez des prompts précis, utilisez les personas et les techniques Few-Shot pour obtenir des résultats professionnels à chaque fois.",
+  "genaiCard2Title": "Automation & Workflows",
+  "genaiCard2Desc": "Connectez vos outils, éliminez les tâches répétitives et créez des pipelines intelligents avec n8n, Make et les APIs. Gagnez des heures chaque semaine grâce à l'automatisation.",
+  "genaiCard3Title": "IA pour le Business",
+  "genaiCard3Desc": "Appliquez concrètement l'IA au marketing digital, à la génération de contenu, au SEO et à la création de slides et vidéos professionnelles.",
+  "genaiCard4Title": "Impact Réel & Mesurable",
+  "genaiCard4Desc": "Des projets concrets dès la semaine 1. Automatisez vos emails, générez des rapports, créez du contenu à l'échelle — et montrez des résultats tangibles.",
+  "genaiTestimonialsTitle": "Ce que disent nos étudiants",
+  "genaiCurriculumTitle": "8 Semaines pour Maîtriser l'IA & l'Automation",
+  "genaiCurriculumSubtitle": "Un parcours pratique et structuré pour passer de débutant à expert en IA générative et automatisation de tâches business.",
+  "genaiCurriculumCta": "Télécharger le programme détaillé",
+  "genaiContactSubtitle": "Prêt à multiplier votre productivité par 10 ? Laissez-nous vos coordonnées et un conseiller vous contactera sous 24h.",
+  "genaiContactCheck3": "Prochaine cohorte IA — Avril 2026",
+  "genaiCurriculumModules": [
+    {
+      "week": "Semaine 1",
+      "title": "Découverte du monde de l'IA",
+      "topics": [
+        "Introduction à l'IA et notions de base sur le fonctionnement des modèles",
+        "Aperçu de l'IA générative et des LLMs (ChatGPT, Grok, Qwen)",
+        "Comprendre les cas d'usage business et les gains de productivité",
+        "Premiers pas avec les outils IA populaires"
+      ]
+    },
+    {
+      "week": "Semaine 2",
+      "title": "Prompt Engineering",
+      "topics": [
+        "Comprendre comment créer et structurer des prompts efficaces",
+        "Notions de modèles Persona et personnalisation de l'IA",
+        "Limites des prompts et comment les contourner",
+        "Techniques de reformulation et d'itération"
+      ]
+    },
+    {
+      "week": "Semaine 3",
+      "title": "Vérification Cognitive & Persona Audience",
+      "topics": [
+        "Techniques pour valider les réponses de l'IA",
+        "Adapter le contenu selon le public cible",
+        "Détection des hallucinations et vérification des faits",
+        "Construire des réponses adaptées à différents contextes"
+      ]
+    },
+    {
+      "week": "Semaine 4",
+      "title": "Modèles de Prompt Avancés",
+      "topics": [
+        "Utilisation de Few-Shot Learning pour guider l'IA",
+        "Chaînes de raisonnement (Chain of Thought)",
+        "Modèles d'apprentissage pour améliorer la qualité des réponses",
+        "Templates de prompts réutilisables pour le business"
+      ]
+    },
+    {
+      "week": "Semaine 5",
+      "title": "Fonctionnalités Avancées de l'IA",
+      "topics": [
+        "Exploitation de l'IA pour analyser images, PDFs et liens",
+        "Automatisation de tâches complexes avec l'IA",
+        "Génération de slides, vidéos et contenus visuels",
+        "Initiation à la programmation assistée par l'IA"
+      ]
+    },
+    {
+      "week": "Semaine 6",
+      "title": "Automation & n8n",
+      "topics": [
+        "Introduction à l'automatisation low-code avec n8n",
+        "Création de workflows et intégration avec APIs et services externes",
+        "Automatisation d'emails, notifications et traitement de données",
+        "Cas pratiques : pipeline de contenu automatisé"
+      ]
+    },
+    {
+      "week": "Semaine 7",
+      "title": "Microsoft Office 365 avec IA",
+      "topics": [
+        "Utilisation de l'IA dans Word, Excel, PowerPoint et Outlook",
+        "Automatisation via Microsoft Power Automate",
+        "Génération de documents, rapports et présentations professionnelles",
+        "Copilot 365 : cas d'usage avancés en entreprise"
+      ]
+    },
+    {
+      "week": "Semaine 8",
+      "title": "Marketing Digital avec IA",
+      "topics": [
+        "Application de l'IA pour améliorer le SEO et la visibilité",
+        "Création de contenu, copywriting et stratégie éditoriale",
+        "Gestion de campagnes publicitaires aidée par l'IA",
+        "Génération de slides et vidéos marketing professionnelles"
+      ]
+    }
+  ],
+  "pbiTag": "Programme 12 Semaines — Data & Power BI",
+  "pbiHeroTitle1": "Maîtrisez la",
+  "pbiHeroHighlight": "Data Analyse",
+  "pbiHeroTitle2": "avec Power BI.",
+  "pbiHeroSubtitle": "Transformez vos données brutes en décisions stratégiques puissantes. Maîtrisez Power BI, DAX et Power Query pour créer des dashboards professionnels et décrocher la certification PL-300.",
+  "pbiStatLabel1": "Semaines intensives",
+  "pbiStatLabel2": "Préparation certification",
+  "pbiFeaturesTitle": "Tout ce dont vous avez besoin pour devenir Data Analyst",
+  "pbiFeaturesSubtitle": "Un programme complet couvrant la collecte, la transformation, la modélisation et la visualisation des données — jusqu'à la certification.",
+  "pbiCard1Subtitle": "Outil n°1 de la BI",
+  "pbiCard1Title": "Maîtrise de Power BI",
+  "pbiCard1Desc": "Connectez vos données, construisez des modèles robustes et créez des dashboards interactifs qui parlent à vos décideurs — le tout sans une ligne de code.",
+  "pbiCard2Title": "Power Query & DAX",
+  "pbiCard2Desc": "Nettoyez et transformez n'importe quelle source de données avec Power Query. Créez des calculs avancés et des KPIs dynamiques avec le langage DAX pour des insights toujours plus précis.",
+  "pbiCard3Title": "Visualisation & Storytelling",
+  "pbiCard3Desc": "Créez des graphiques percutants, des rapports interactifs avec drill-down et des dashboards qui racontent une histoire claire grâce aux meilleures pratiques UX/UI de la data visualisation.",
+  "pbiCard4Title": "Certification PL-300",
+  "pbiCard4Desc": "Préparez-vous à la certification Microsoft Power BI Data Analyst (PL-300) avec des cas pratiques type examen et un projet complet de data analyse.",
+  "pbiTestimonialsTitle": "Ce que disent nos étudiants",
+  "pbiCurriculumTitle": "12 Semaines vers la Maîtrise de Power BI",
+  "pbiCurriculumSubtitle": "Un parcours structuré de la donnée brute au rapport professionnel publié — avec la préparation à la certification PL-300.",
+  "pbiCurriculumCta": "Télécharger le programme détaillé",
+  "pbiContactSubtitle": "Prêt à transformer vos données en avantage concurrentiel ? Laissez-nous vos coordonnées et un conseiller vous contactera sous 24h.",
+  "pbiContactCheck3": "Préparation à la certification PL-300 incluse",
+  "pbiCurriculumModules": [
+    {
+      "week": "Phase 1 — Semaines 1-3",
+      "title": "Fondations : Data, Power BI & Power Query",
+      "topics": [
+        "Bases de la data analyse et rôle du data analyst",
+        "Découverte de Power BI Desktop et de son écosystème",
+        "Connexion aux sources de données (Excel, CSV, bases de données, web)",
+        "Nettoyage et transformation des données avec Power Query (langage M)"
+      ]
+    },
+    {
+      "week": "Phase 2 — Semaines 4-6",
+      "title": "Modélisation & Calculs DAX",
+      "topics": [
+        "Création de relations entre tables et schéma en étoile",
+        "Optimisation du modèle de données pour les performances",
+        "Introduction au DAX : colonnes calculées et mesures simples",
+        "DAX avancé : CALCULATE, FILTER, Time Intelligence (YTD, MTD)"
+      ]
+    },
+    {
+      "week": "Phase 3 — Semaines 7-9",
+      "title": "Visualisation, Rapports & Optimisation",
+      "topics": [
+        "Création de graphiques et bonnes pratiques UX/UI de la data viz",
+        "Dashboards interactifs, drill-down, slicers et storytelling",
+        "Navigation entre pages et bookmarks pour des rapports dynamiques",
+        "Optimisation des performances et du modèle (Performance Analyzer)"
+      ]
+    },
+    {
+      "week": "Phase 4 — Semaines 10-12",
+      "title": "Publication, Gouvernance & Projet Final",
+      "topics": [
+        "Publication sur Power BI Service et gestion des workspaces",
+        "Partage, collaboration et planification des actualisations",
+        "Sécurité des données : Row-Level Security (RLS) et gouvernance",
+        "Projet final complet de data analyse — de la donnée brute au rapport publié"
+      ]
+    }
   ]
 }

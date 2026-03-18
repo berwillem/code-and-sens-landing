@@ -9,8 +9,8 @@ import { submitToHubspot } from '../utils/hubspot';
 const routePrimaryColors = {
   '/bootcamps/web-dev-essentials':         '#294CFF',
   '/bootcamps/ecommerce':                  '#EAB308',
-  '/bootcamps/generative-ai-automation':   '#9333EA',
-  '/bootcamps/power-bi':                   '#2563EB',
+  '/bootcamps/generative-ai-automation':   '#8C00FF',
+  '/bootcamps/power-bi':                   '#8C00FF',
   '/bootcamps/ui-ux-design':               '#03BF1F',
   '/bootcamps/cybersecurity-bootcamp':     '#EF4444',
   '/bootcamps/cybersecurity-introduction': '#EF4444',
