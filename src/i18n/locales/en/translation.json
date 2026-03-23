@@ -318,5 +318,71 @@
         "Complete end-to-end data analysis project — raw data to published report"
       ]
     }
+  ],
+  "ecomTag": "12-Week Programme — E-Commerce & Digital Marketing",
+  "ecomHeroTitle1": "Launch Your",
+  "ecomHeroHighlight": "Online Store",
+  "ecomHeroTitle2": "& Sell at Scale.",
+  "ecomHeroSubtitle": "Master e-commerce from start to finish in 8 weeks. Build your Shopify store, run powerful ad campaigns and grow a digital brand that sells — even while you sleep.",
+  "ecomStatLabel1": "Intensive weeks",
+  "ecomStatLabel2": "100% hands-on",
+  "ecomFeaturesTitle": "Everything You Need to Sell Online",
+  "ecomFeaturesSubtitle": "A results-driven programme designed to transform you into a profitable, self-sufficient e-commerce entrepreneur.",
+  "ecomCard1Subtitle": "#1 E-Commerce Platform",
+  "ecomCard1Title": "Shopify Mastery",
+  "ecomCard1Desc": "Build and configure a professional Shopify store from scratch. Themes, products, payments, shipping — we cover everything so you're ready to sell from Week 1.",
+  "ecomCard2Title": "Digital Marketing & Ads",
+  "ecomCard2Desc": "Launch profitable Facebook Ads, Instagram Ads and Google Ads campaigns. Master targeting, tracking and continuous optimisation to maximise your return on investment.",
+  "ecomCard3Title": "SEO & Content",
+  "ecomCard3Desc": "Attract customers organically: optimise your store for search engines, create content that converts and build a lasting online presence.",
+  "ecomCard4Title": "Analytics & Optimisation",
+  "ecomCard4Desc": "Interpret your Google Analytics and Shopify data to make profitable decisions — and scale what's working.",
+  "ecomTestimonialsTitle": "What Our Students Say",
+  "ecomCurriculumTitle": "12 Weeks to Launch Your Online Business",
+  "ecomCurriculumSubtitle": "From product niche to paid ads — a complete journey to build, optimise and scale a professional e-commerce store.",
+  "ecomCurriculumCta": "Download Full Syllabus",
+  "ecomContactSubtitle": "Ready to launch your online store? Leave us your details and one of our advisors will reach out within 24 hours.",
+  "ecomContactCheck3": "Next E-Commerce cohort — April 2026",
+  "ecomCurriculumModules": [
+    {
+      "week": "Weeks 1–3",
+      "title": "E-Commerce Foundations & Online Store",
+      "topics": [
+        "Introduction to e-commerce, business models (B2C, B2B, dropshipping) and market trends",
+        "Finding a winning product: tools, competitor analysis and business idea validation",
+        "Building a store on Shopify / WordPress: theme, design and site structure",
+        "Full store configuration and going live"
+      ]
+    },
+    {
+      "week": "Weeks 4–6",
+      "title": "Optimisation, Logistics & Digital Marketing",
+      "topics": [
+        "High-converting product pages: copywriting, UX and trust elements (reviews, guarantees)",
+        "Payment setup, order management, logistics and sales process automation",
+        "Digital marketing fundamentals, sales funnel and customer acquisition strategy",
+        "Brand positioning and competitive differentiation"
+      ]
+    },
+    {
+      "week": "Weeks 7–9",
+      "title": "Meta Ads, Content & Advanced Marketing",
+      "topics": [
+        "Meta Ads (Facebook / Instagram): create, target and analyse your campaigns",
+        "Visuals, video ads and copywriting — using AI to speed up content production",
+        "Email marketing, retargeting, remarketing and customer retention",
+        "Advanced acquisition strategies and marketing automation"
+      ]
+    },
+    {
+      "week": "Weeks 10–12",
+      "title": "CRO, Scaling & Final Project",
+      "topics": [
+        "Conversion Rate Optimisation (CRO): user behaviour analysis, A/B testing and page optimisation",
+        "Scaling campaigns, performance management and ad cost optimisation",
+        "Business automation and passing to the next level of scale",
+        "Final project: complete store, product launch and full marketing campaign"
+      ]
+    }
   ]
 }

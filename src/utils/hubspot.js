@@ -14,7 +14,7 @@ export const submitToHubspot = async (data, pathname, pageName, t) => {
     training = "UX/UI Design";
   } else if (pathname.includes("ecommerce")) {
     category = "Digital Marketing";
-    training = "E-commerce";
+    training = "E-Commerce Fundamentals";
   } else if (pathname.includes("generative-ai-automation")) {
     category = "Data and AI";
     training = "Generative AI & Automation";

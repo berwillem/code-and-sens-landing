@@ -390,5 +390,71 @@
         "Projet final complet de data analyse — de la donnée brute au rapport publié"
       ]
     }
+  ],
+  "ecomTag": "Programme 12 Semaines — E-Commerce & Marketing Digital",
+  "ecomHeroTitle1": "Lancez votre",
+  "ecomHeroHighlight": "Boutique En Ligne",
+  "ecomHeroTitle2": "& Vendez à l'Échelle.",
+  "ecomHeroSubtitle": "Maîtrisez le e-commerce de A à Z en 8 semaines. Créez votre boutique Shopify, pilotez vos campagnes publicitaires et développez une marque digitale qui vend — même en dormant.",
+  "ecomStatLabel1": "Semaines intensives",
+  "ecomStatLabel2": "100% pratique",
+  "ecomFeaturesTitle": "Tout ce qu'il faut pour vendre en ligne",
+  "ecomFeaturesSubtitle": "Un programme orienté résultats pour vous transformer en entrepreneur e-commerce autonome et rentable.",
+  "ecomCard1Subtitle": "Outil n°1 du E-Commerce",
+  "ecomCard1Title": "Maîtrise de Shopify",
+  "ecomCard1Desc": "Créez et configurez une boutique Shopify professionnelle de zéro. Thèmes, produits, paiements, livraison — nous couvrons tout pour que vous soyez prêt à vendre dès la semaine 1.",
+  "ecomCard2Title": "Marketing Digital & Ads",
+  "ecomCard2Desc": "Lancez des campagnes Facebook Ads, Instagram Ads et Google Ads rentables. Maîtrisez le ciblage, le tracking et l'optimisation continue pour maximiser votre retour sur investissement.",
+  "ecomCard3Title": "SEO & Contenu",
+  "ecomCard3Desc": "Attirez des clients organiquement : optimisez votre boutique pour les moteurs de recherche, créez du contenu qui convertit et bâtissez une présence durable.",
+  "ecomCard4Title": "Analyse & Optimisation",
+  "ecomCard4Desc": "Interprétez vos données Google Analytics et Shopify pour prendre des décisions rentables — et scaler ce qui fonctionne.",
+  "ecomTestimonialsTitle": "Ce que disent nos étudiants",
+  "ecomCurriculumTitle": "12 Semaines pour Lancer votre Business en Ligne",
+  "ecomCurriculumSubtitle": "De la niche produit au lancement publicitaire — un parcours complet pour créer, optimiser et scaler une boutique e-commerce professionnelle.",
+  "ecomCurriculumCta": "Télécharger le programme détaillé",
+  "ecomContactSubtitle": "Prêt à lancer votre boutique en ligne ? Laissez-nous vos coordonnées et un conseiller vous contactera sous 24h.",
+  "ecomContactCheck3": "Prochaine cohorte E-Commerce — Avril 2026",
+  "ecomCurriculumModules": [
+    {
+      "week": "Semaines 1–3",
+      "title": "Fondations E-Commerce & Boutique en Ligne",
+      "topics": [
+        "Introduction au e-commerce, modèles (B2C, B2B, dropshipping) et tendances marché",
+        "Recherche de produit gagnant : outils, analyse concurrence et validation d'idée",
+        "Création de boutique sur Shopify / WordPress, thème, design et structure",
+        "Configuration complète et mise en ligne de la boutique"
+      ]
+    },
+    {
+      "week": "Semaines 4–6",
+      "title": "Optimisation, Logistique & Marketing Digital",
+      "topics": [
+        "Pages produits efficaces : copywriting, UX et éléments de confiance (avis, garanties)",
+        "Paiement, gestion des commandes, logistique et automatisation du processus de vente",
+        "Bases du marketing digital, tunnel de vente et stratégie d'acquisition client",
+        "Positionnement de marque et différenciation concurrentielle"
+      ]
+    },
+    {
+      "week": "Semaines 7–9",
+      "title": "Publicité Meta, Contenu & Marketing Avancé",
+      "topics": [
+        "Meta Ads (Facebook / Instagram) : créer, cibler et analyser vos campagnes",
+        "Création de visuels, vidéos et copywriting ads — avec l'IA pour accélérer la production",
+        "Email marketing, retargeting, remarketing et fidélisation client",
+        "Stratégies d'acquisition avancées et automatisation marketing"
+      ]
+    },
+    {
+      "week": "Semaines 10–12",
+      "title": "CRO, Scaling & Projet Final",
+      "topics": [
+        "Conversion Rate Optimization (CRO) : analyse comportement, tests A/B et optimisation",
+        "Scaling des campagnes, gestion des performances et optimisation des coûts publicitaires",
+        "Automatisation du business et passage à l'échelle",
+        "Projet final : boutique complète, lancement produit et campagne marketing"
+      ]
+    }
   ]
 }
