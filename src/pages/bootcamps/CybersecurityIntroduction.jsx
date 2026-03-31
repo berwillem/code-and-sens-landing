@@ -260,10 +260,10 @@ const CybersecurityIntroduction = () => {
             <button 
               className="text-white text-sm px-8 py-3.5 rounded-xl font-bold transition-all duration-300 hover:opacity-90 hover:-translate-y-1 hover:shadow-xl active:scale-95 shadow-lg group relative overflow-hidden" 
               style={{ backgroundColor: primaryColor, boxShadow: `0 8px 32px rgba(255,23,23,0.3)` }} 
-              onClick={() => onOpenModal && onOpenModal()}
+              onClick={() => onOpenModal && onOpenModal('Hero - Rendez-vous gratuit', 'Confirmer le rendez-vous')}
             >
               <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
-              <span className="relative z-10">{t('heroCta1', 'Start Learning')}</span>
+              <span className="relative z-10">{'Rendez-vous gratuit'}</span>
             </button>
             <button 
               className="text-slate-300 bg-slate-900/50 border border-slate-700 text-sm px-8 py-3.5 rounded-xl font-bold transition-all duration-300 hover:bg-slate-800 hover:-translate-y-1 hover:shadow-md active:scale-95 hover:border-red-500/50" 
@@ -280,7 +280,12 @@ const CybersecurityIntroduction = () => {
             <div className="flex gap-0.5">
               {[1,2,3,4,5].map(i => <StarIcon key={i} />)}
             </div>
-            <span><strong className="text-white">4.9</strong> {t('heroRating')}</span>
+                        <span><strong className="text-white">4.9</strong> {t('heroRating')}</span>
+            <div className="w-px h-6 bg-slate-700"></div>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border bg-white/5 backdrop-blur-md shadow-sm" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
+               <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-white/50">Prix</span>
+               <span className="text-sm sm:text-base font-black font-heading text-white">40 000 DA</span>
+            </div>
           </div>
         </div>
 
@@ -483,9 +488,8 @@ const CybersecurityIntroduction = () => {
           <div className="text-center mt-12 relative z-10">
              <button 
                className="px-10 py-4 text-base font-bold bg-white text-slate-900 rounded-xl shadow-xl hover:-translate-y-1 transition-all duration-300 hover:shadow-[0_0_20px_white]" 
-               onClick={() => onOpenModal && onOpenModal()}
-             >
-               {t('communityCta')}
+               onClick={() => onOpenModal && onOpenModal('Testimonials - Communauté', 'Rejoindre la communauté')}
+             >{t('communityCta')}
              </button>
           </div>
         </div>
@@ -531,9 +535,8 @@ const CybersecurityIntroduction = () => {
           <div className="mt-16 text-center curriculum-btn">
              <button 
                className="btn-secondary text-sm px-8 py-3.5 outline outline-1 outline-slate-700 text-white bg-slate-900 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-red-500/50 active:scale-95" 
-               onClick={() => onOpenModal && onOpenModal()}
-             >
-                {t('curriculumCta')}
+               onClick={() => onOpenModal && onOpenModal('Programme / Curriculum', "S'inscrire au programme")}
+             >{t('curriculumCta')}
              </button>
           </div>
         </div>

@@ -9,7 +9,7 @@ const CheckIcon = () => (
   </svg>
 );
 
-const ContactModal = ({ isOpen, onClose, primaryColor, customTitle }) => {
+const ContactModal = ({ isOpen, onClose, primaryColor, customTitle, customCtaText }) => {
   const { t } = useTranslation();
   const [isRendered, setIsRendered] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', phone: '' });
@@ -105,7 +105,7 @@ const ContactModal = ({ isOpen, onClose, primaryColor, customTitle }) => {
             </div>
             <div className="space-y-1.5">
               <label htmlFor="modal-email" className="text-sm font-semibold text-slate-600">{t('formEmail')}</label>
-              <input type="email" id="modal-email" className="input w-full" placeholder="codeandsens@contact.com" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} required />
+              <input type="email" id="modal-email" className="input w-full" placeholder="contact@codeansens.com" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} required />
             </div>
             <div className="space-y-1.5">
               <label htmlFor="modal-phone" className="text-sm font-semibold text-slate-600">{t('formPhone')}</label>
@@ -122,7 +122,7 @@ const ContactModal = ({ isOpen, onClose, primaryColor, customTitle }) => {
               className="w-full py-4 text-white text-base font-bold rounded-xl mt-2 shadow-lg hover:opacity-90 transition-all duration-300 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100 disabled:hover:opacity-50"
               style={{ backgroundColor: primaryColor, boxShadow: `0 8px 32px ${primaryColor}40` }}
             >
-              {t('formSubmit')}
+              {customCtaText || t('formSubmit')}
             </button>
           </form>
         </div>

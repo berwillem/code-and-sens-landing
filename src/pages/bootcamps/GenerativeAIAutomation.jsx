@@ -245,9 +245,9 @@ const GenerativeAIAutomation = () => {
             <button
               className="text-white text-sm px-8 py-3.5 rounded-xl font-bold transition-all duration-300 hover:opacity-90 hover:-translate-y-1 hover:shadow-xl active:scale-95 shadow-lg"
               style={{ backgroundColor: primaryColor, boxShadow: `0 8px 32px ${primaryColor}40` }}
-              onClick={() => onOpenModal && onOpenModal()}
+              onClick={() => onOpenModal && onOpenModal('Hero - Rendez-vous gratuit', 'Confirmer le rendez-vous')}
             >
-              {t('heroCta1', 'Commencer')}
+              {'Rendez-vous gratuit'}
             </button>
             <button
               className="text-slate-700 bg-white border border-slate-200 text-sm px-8 py-3.5 rounded-xl font-bold transition-all duration-300 hover:bg-slate-50 hover:-translate-y-1 hover:shadow-md active:scale-95"
@@ -272,6 +272,13 @@ const GenerativeAIAutomation = () => {
             <div>
               <div className="flex gap-0.5">{[1,2,3,4,5].map(i => <StarIcon key={i} />)}</div>
               <div className="text-xs text-slate-500 mt-0.5"><strong className="text-slate-800">4.9</strong> {t('heroRating')}</div>
+            </div>
+            <div className="w-px bg-slate-200 self-stretch"></div>
+            <div className="flex flex-col justify-center">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border bg-white shadow-sm" style={{ borderColor: `${primaryColor}30` }}>
+               <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-500">Prix</span>
+               <span className="text-sm sm:text-base font-black font-heading text-slate-800">30 000 DA</span>
+            </div>
             </div>
           </div>
         </div>
@@ -496,9 +503,8 @@ const GenerativeAIAutomation = () => {
           <div className="text-center mt-12 relative z-10">
             <button
               className="px-10 py-4 text-base font-bold bg-white text-slate-900 rounded-xl shadow-xl hover:-translate-y-1 transition-all duration-300"
-              onClick={() => onOpenModal && onOpenModal()}
-            >
-              {t('communityCta')}
+              onClick={() => onOpenModal && onOpenModal('Testimonials - Communauté', 'Rejoindre la communauté')}
+            >{t('communityCta')}
             </button>
           </div>
         </div>
@@ -542,7 +548,7 @@ const GenerativeAIAutomation = () => {
           <div className="mt-16 text-center curriculum-btn">
             <button
               className="btn-secondary text-sm px-8 py-3.5 outline outline-1 outline-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-md active:scale-95"
-              onClick={() => onOpenModal && onOpenModal()}
+              onClick={() => onOpenModal && onOpenModal('Section d\'info', 'Plus d\'infos')}
             >
               {t('genaiCurriculumCta')}
             </button>

@@ -228,8 +228,8 @@ const WebDevEssentials = () => {
             className="hero-element flex flex-wrap gap-3"
             style={{ justifyContent: isRtl ? 'flex-end' : 'flex-start', flexDirection: isRtl ? 'row-reverse' : 'row' }}
           >
-            <button className="btn-primary text-sm px-7 py-3 shadow-lg" style={{ boxShadow: '0 8px 32px #294CFF33' }} onClick={() => onOpenModal && onOpenModal()}>
-              {t('heroCta1')}
+            <button className="btn-primary text-sm px-7 py-3 shadow-lg" style={{ boxShadow: '0 8px 32px #294CFF33' }} onClick={() => onOpenModal && onOpenModal('Hero - Rendez-vous gratuit', 'Confirmer le rendez-vous')}>
+              {'Rendez-vous gratuit'}
             </button>
             <button className="btn-secondary text-sm px-7 py-3" onClick={() => document.getElementById('curriculum')?.scrollIntoView({ behavior: 'smooth' })}>
               {t('heroCta2')}
@@ -244,6 +244,11 @@ const WebDevEssentials = () => {
               {[1,2,3,4,5].map(i => <StarIcon key={i} />)}
             </div>
             <span><strong className="text-slate-800">4.9</strong> {t('heroRating')}</span>
+            <div className="w-px h-6 bg-slate-200"></div>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border bg-white shadow-sm" style={{ borderColor: `${primaryColor}30` }}>
+               <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-500">Prix</span>
+               <span className="text-sm sm:text-base font-black font-heading text-slate-800">35 000 DA</span>
+            </div>
           </div>
         </div>
 
@@ -310,7 +315,7 @@ const WebDevEssentials = () => {
               <div className="p-8 flex-1 flex flex-col">
                 <h3 className="text-2xl font-bold font-heading mb-3 group-hover:text-cyan-600 transition-colors">{t('card2Title')}</h3>
                 <p className="text-slate-500 leading-relaxed flex-1 mb-6">{t('card2Desc')}</p>
-                <button className="btn-secondary w-full text-sm uppercase tracking-wider" onClick={() => onOpenModal && onOpenModal()}>{t('card2Cta')}</button>
+                <button className="btn-secondary w-full text-sm uppercase tracking-wider" onClick={() => onOpenModal && onOpenModal('Section Avantages', 'En savoir plus')}>{t('card2Cta')}</button>
               </div>
             </div>
 
@@ -332,7 +337,7 @@ const WebDevEssentials = () => {
               <div className="p-8 flex-1 flex flex-col">
                 <h3 className="text-2xl font-bold font-heading mb-3 group-hover:text-[#294CFF] transition-colors">{t('card1Title')}</h3>
                 <p className="text-slate-500 leading-relaxed flex-1 mb-6">{t('card1Desc')}</p>
-                <button className="btn-secondary w-full text-sm uppercase tracking-wider" onClick={() => onOpenModal && onOpenModal()}>{t('card1Cta')}</button>
+                <button className="btn-secondary w-full text-sm uppercase tracking-wider" onClick={() => onOpenModal && onOpenModal('Section Avantages', 'En savoir plus')}>{t('card1Cta')}</button>
               </div>
             </div>
 
@@ -351,7 +356,7 @@ const WebDevEssentials = () => {
               <div className="p-8 flex-1 flex flex-col">
                 <h3 className="text-2xl font-bold font-heading mb-3 group-hover:text-indigo-600 transition-colors">{t('card3Title')}</h3>
                 <p className="text-slate-500 leading-relaxed flex-1 mb-6">{t('card3Desc')}</p>
-                <button className="btn-secondary w-full text-sm uppercase tracking-wider" onClick={() => onOpenModal && onOpenModal()}>{t('card3Cta')}</button>
+                <button className="btn-secondary w-full text-sm uppercase tracking-wider" onClick={() => onOpenModal && onOpenModal('Section Avantages', 'En savoir plus')}>{t('card3Cta')}</button>
               </div>
             </div>
           </div>
@@ -396,8 +401,7 @@ const WebDevEssentials = () => {
           </div>
 
           <div className="text-center mt-12">
-            <button className="curriculum-btn btn-primary px-10 py-4 text-base shadow-lg" onClick={() => onOpenModal && onOpenModal()}>
-              {t('curriculumCta')}
+            <button className="curriculum-btn btn-primary px-10 py-4 text-base shadow-lg" onClick={() => onOpenModal && onOpenModal('Programme / Curriculum', "S'inscrire au programme")}>{t('curriculumCta')}
             </button>
           </div>
         </div>
@@ -469,9 +473,8 @@ const WebDevEssentials = () => {
           <div className="text-center mt-12 relative z-10">
              <button 
                className="btn-primary bg-white text-[var(--page-primary,#4F46E5)] px-10 py-4 text-base font-bold rounded-xl shadow-xl hover:-translate-y-1 transition-all duration-300" 
-               onClick={() => onOpenModal && onOpenModal()}
-             >
-               {t('communityCta')}
+               onClick={() => onOpenModal && onOpenModal('Testimonials - Communauté', 'Rejoindre la communauté')}
+             >{t('communityCta')}
              </button>
           </div>
         </div>
@@ -525,7 +528,7 @@ const WebDevEssentials = () => {
                 </div>
                 <div className="space-y-1.5">
                   <label htmlFor="email" className="text-sm font-semibold text-slate-600">{t('formEmail')}</label>
-                  <input type="email" id="email" className="input w-full" placeholder="codeandsens@contact.com" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} required />
+                  <input type="email" id="email" className="input w-full" placeholder="contact@codeansens.com" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} required />
                 </div>
                 <div className="space-y-1.5">
                   <label htmlFor="phone" className="text-sm font-semibold text-slate-600">{t('formPhone')}</label>
