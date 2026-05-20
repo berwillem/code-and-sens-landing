@@ -277,7 +277,7 @@ const GenerativeAIAutomation = () => {
             <div className="flex flex-col justify-center">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border bg-white shadow-sm" style={{ borderColor: `${primaryColor}30` }}>
                <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-500">Prix</span>
-               <span className="text-sm sm:text-base font-black font-heading text-slate-800">30 000 DA</span>
+               <span className="text-sm sm:text-base font-black font-heading text-slate-800">35 000 DA</span>
             </div>
             </div>
           </div>
