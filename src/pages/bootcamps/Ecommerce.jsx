@@ -217,7 +217,7 @@ const Ecommerce = () => {
             style={{ flexDirection: isRtl ? 'row-reverse' : 'row', backgroundColor: `${primaryColor}1a`, color: primaryColor, border: `1px solid ${primaryColor}30` }}
           >
             <ShopIcon />
-            {t('ecomTag', 'Programme 8 Semaines — E-Commerce & Marketing Digital')}
+            {t('ecomTag', 'Programme 8 Semaines (6h/semaine) — E-Commerce & Marketing Digital')}
           </div>
 
           <h1 className="hero-element text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight font-heading">
@@ -252,7 +252,7 @@ const Ecommerce = () => {
           {/* Stats row */}
           <div className="hero-element flex flex-wrap gap-6 pt-2">
             <div>
-              <div className="text-2xl font-bold font-heading" style={{ color: primaryColor }}>12</div>
+              <div className="text-2xl font-bold font-heading" style={{ color: primaryColor }}>8</div>
               <div className="text-xs text-slate-500">{t('ecomStatLabel1', 'Semaines intensives')}</div>
             </div>
             <div className="w-px bg-slate-200 self-stretch"></div>

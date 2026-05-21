@@ -225,7 +225,7 @@ const GenerativeAIAutomation = () => {
             style={{ flexDirection: isRtl ? 'row-reverse' : 'row', backgroundColor: `${primaryColor}1a`, color: primaryColor, border: `1px solid ${primaryColor}33` }}
           >
             <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: primaryColor }}></span>
-            {t('genaiTag', 'Programme 8 Semaines — IA & Automation')}
+            {t('genaiTag', 'Programme 5 Semaines (6h/semaine) — IA & Automation')}
           </div>
 
           <h1 className="hero-element text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight font-heading">
@@ -265,7 +265,7 @@ const GenerativeAIAutomation = () => {
             </div>
             <div className="w-px bg-slate-200 self-stretch"></div>
             <div>
-              <div className="text-2xl font-bold font-heading text-slate-800">8</div>
+              <div className="text-2xl font-bold font-heading text-slate-800">5</div>
               <div className="text-xs text-slate-500">{t('genaiStatLabel2', 'Semaines intensives')}</div>
             </div>
             <div className="w-px bg-slate-200 self-stretch"></div>

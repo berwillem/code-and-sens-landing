@@ -30,7 +30,7 @@
   "contactSubtitle": "Ready to join the next Web Development cohort? Leave us your details and our advisor will reach out within 24h.",
   "contactCheck1": "Free Advisory Call",
   "contactCheck2": "No Commitment Required",
-  "contactCheck3": "Cohort starts April 2026",
+  "contactCheck3": "Cohort starts June 2026",
   "formTitle": "Book your free appointment",
   "formName": "Full Name",
   "formEmail": "Email Address",
@@ -217,15 +217,15 @@
     { "week": "Week 15", "title": "Infrastructure Security", "topics": ["Firewall and network security", "IDS and IPS systems", "Endpoint security", "System hardening best practices"] },
     { "week": "Week 16", "title": "Advanced Labs & Career Prep", "topics": ["Red Team vs Blue Team scenarios", "Practical exercises and attack simulations", "Intro to Threat Intelligence and forensics", "Certification and cybersecurity career prep"] }
   ],
-  "genaiTag": "8-Week Programme — Generative AI & Automation",
+  "genaiTag": "5-Week Programme (6h/week) — Generative AI & Automation",
   "genaiHeroTitle1": "Master Generative",
   "genaiHeroHighlight": "AI",
   "genaiHeroTitle2": "& Automation.",
-  "genaiHeroSubtitle": "Radically transform your productivity in 8 weeks. Learn to harness ChatGPT, automate your workflows with n8n and Microsoft 365, and multiply your professional output by 10.",
+  "genaiHeroSubtitle": "Radically transform your productivity in 5 weeks (6h/week). Learn to harness ChatGPT, automate your workflows with n8n and Microsoft 365, and multiply your professional output by 10.",
   "genaiHeroChatMsg1": "Generate a weekly marketing report automatically.",
   "genaiHeroChatMsg2": "Report generated. n8n workflow triggered. 4 tasks automated.",
   "genaiStatLabel1": "Productivity boost",
-  "genaiStatLabel2": "Intensive weeks",
+  "genaiStatLabel2": "Intensive chapters",
   "genaiFeaturesTitle": "Everything You Need to Automate Your Success",
   "genaiFeaturesSubtitle": "A hands-on programme to master generative AI and automate your business tasks — no coding background needed.",
   "genaiCard1Subtitle": "Core Skill",
@@ -236,22 +236,19 @@
   "genaiCard3Title": "AI for Business",
   "genaiCard3Desc": "Concretely apply AI to digital marketing, content generation, SEO, and creating professional slides and videos.",
   "genaiCard4Title": "Real & Measurable Impact",
-  "genaiCard4Desc": "Hands-on projects from Week 1. Automate emails, generate reports, create content at scale — and show tangible results.",
+  "genaiCard4Desc": "Hands-on projects from Chapter 1. Automate emails, generate reports, create content at scale — and show tangible results.",
   "genaiTestimonialsTitle": "What Our Students Say",
-  "genaiCurriculumTitle": "8 Weeks to Master AI & Automation",
+  "genaiCurriculumTitle": "5 Chapters to Master AI & Automation",
   "genaiCurriculumSubtitle": "A structured, hands-on journey from beginner to expert in generative AI and business task automation.",
   "genaiCurriculumCta": "Download Full Syllabus",
   "genaiContactSubtitle": "Ready to 10x your productivity? Leave us your details and one of our advisors will reach out within 24 hours.",
-  "genaiContactCheck3": "Next AI cohort — April 2026",
+  "genaiContactCheck3": "Next AI cohort — June 2026",
   "genaiCurriculumModules": [
-    { "week": "Week 1", "title": "Discovering the World of AI", "topics": ["Introduction to AI and how models work", "Overview of generative AI and LLMs (ChatGPT, Grok, Qwen)", "Understanding business use cases and productivity gains", "First steps with popular AI tools"] },
-    { "week": "Week 2", "title": "Prompt Engineering", "topics": ["How to create and structure effective prompts", "Persona model concepts and AI customisation", "Prompt limitations and how to work around them", "Reformulation and iteration techniques"] },
-    { "week": "Week 3", "title": "Cognitive Verification & Persona Audience", "topics": ["Techniques to validate AI responses", "Adapting content for a target audience", "Detecting hallucinations and fact-checking", "Building responses suited to different contexts"] },
-    { "week": "Week 4", "title": "Advanced Prompt Models", "topics": ["Few-Shot Learning to guide the AI", "Chain-of-Thought reasoning techniques", "Learning models to improve response quality", "Reusable prompt templates for business"] },
-    { "week": "Week 5", "title": "Advanced AI Capabilities", "topics": ["Using AI to analyse images, PDFs, and links", "Automating complex tasks with AI", "Generating slides, videos, and visual content", "Introduction to AI-assisted programming"] },
-    { "week": "Week 6", "title": "Automation & n8n", "topics": ["Intro to low-code automation with n8n", "Building workflows and integrating APIs & external services", "Automating emails, notifications, and data processing", "Practical case: automated content pipeline"] },
-    { "week": "Week 7", "title": "Microsoft Office 365 with AI", "topics": ["Using AI in Word, Excel, PowerPoint, and Outlook", "Automation via Microsoft Power Automate", "Generating professional documents, reports and presentations", "Copilot 365: advanced enterprise use cases"] },
-    { "week": "Week 8", "title": "Digital Marketing with AI", "topics": ["Applying AI to improve SEO and visibility", "Content creation, copywriting, and editorial strategy", "AI-assisted advertising campaign management", "Generating professional marketing slides and videos"] }
+    { "week": "Chapter 1", "title": "Discovering AI & Prompt Engineering", "topics": ["Introduction to AI and how models work", "Overview of generative AI and LLMs (ChatGPT, Grok, Qwen)", "Understanding business use cases and productivity gains", "How to create and structure effective prompts & custom personas"] },
+    { "week": "Chapter 2", "title": "Advanced Prompting & Cognitive Verification", "topics": ["Few-Shot Learning to guide the AI", "Chain-of-Thought reasoning techniques", "Techniques to validate AI responses & detect hallucinations", "Adapting content and prompts for a target audience"] },
+    { "week": "Chapter 3", "title": "Advanced AI Capabilities", "topics": ["Using AI to analyse images, PDFs, and links", "Automating complex tasks with AI", "Generating slides, videos, and visual content", "Introduction to AI-assisted programming"] },
+    { "week": "Chapter 4", "title": "Automation with n8n & Microsoft 365", "topics": ["Intro to low-code automation with n8n", "Building workflows and integrating APIs & external services", "Using AI in Word, Excel, PowerPoint, and Outlook", "Automation via Microsoft Power Automate & Copilot 365"] },
+    { "week": "Chapter 5", "title": "Digital Marketing with AI", "topics": ["Applying AI to improve SEO and visibility", "Content creation, copywriting, and editorial strategy", "AI-assisted advertising campaign management", "Generating professional marketing slides and videos"] }
   ],
   "pbiTag": "12-Week Programme — Data & Power BI",
   "pbiHeroTitle1": "Master Data",
@@ -319,11 +316,11 @@
       ]
     }
   ],
-  "ecomTag": "12-Week Programme — E-Commerce & Digital Marketing",
+  "ecomTag": "8-Week Programme (6h/week) — E-Commerce & Digital Marketing",
   "ecomHeroTitle1": "Launch Your",
   "ecomHeroHighlight": "Online Store",
   "ecomHeroTitle2": "& Sell at Scale.",
-  "ecomHeroSubtitle": "Master e-commerce from start to finish in 8 weeks. Build your Shopify store, run powerful ad campaigns and grow a digital brand that sells — even while you sleep.",
+  "ecomHeroSubtitle": "Master e-commerce from start to finish in 8 weeks (6h/week). Build your Shopify store, run powerful ad campaigns and grow a digital brand that sells — even while you sleep.",
   "ecomStatLabel1": "Intensive weeks",
   "ecomStatLabel2": "100% hands-on",
   "ecomFeaturesTitle": "Everything You Need to Sell Online",
@@ -338,14 +335,14 @@
   "ecomCard4Title": "Analytics & Optimisation",
   "ecomCard4Desc": "Interpret your Google Analytics and Shopify data to make profitable decisions — and scale what's working.",
   "ecomTestimonialsTitle": "What Our Students Say",
-  "ecomCurriculumTitle": "12 Weeks to Launch Your Online Business",
+  "ecomCurriculumTitle": "8 Weeks to Launch Your Online Business",
   "ecomCurriculumSubtitle": "From product niche to paid ads — a complete journey to build, optimise and scale a professional e-commerce store.",
   "ecomCurriculumCta": "Download Full Syllabus",
   "ecomContactSubtitle": "Ready to launch your online store? Leave us your details and one of our advisors will reach out within 24 hours.",
-  "ecomContactCheck3": "Next E-Commerce cohort — April 2026",
+  "ecomContactCheck3": "Next E-Commerce cohort — June 2026",
   "ecomCurriculumModules": [
     {
-      "week": "Weeks 1–3",
+      "week": "Weeks 1–2",
       "title": "E-Commerce Foundations & Online Store",
       "topics": [
         "Introduction to e-commerce, business models (B2C, B2B, dropshipping) and market trends",
@@ -355,7 +352,7 @@
       ]
     },
     {
-      "week": "Weeks 4–6",
+      "week": "Weeks 3–4",
       "title": "Optimisation, Logistics & Digital Marketing",
       "topics": [
         "High-converting product pages: copywriting, UX and trust elements (reviews, guarantees)",
@@ -365,7 +362,7 @@
       ]
     },
     {
-      "week": "Weeks 7–9",
+      "week": "Weeks 5–6",
       "title": "Meta Ads, Content & Advanced Marketing",
       "topics": [
         "Meta Ads (Facebook / Instagram): create, target and analyse your campaigns",
@@ -375,7 +372,7 @@
       ]
     },
     {
-      "week": "Weeks 10–12",
+      "week": "Weeks 7–8",
       "title": "CRO, Scaling & Final Project",
       "topics": [
         "Conversion Rate Optimisation (CRO): user behaviour analysis, A/B testing and page optimisation",
