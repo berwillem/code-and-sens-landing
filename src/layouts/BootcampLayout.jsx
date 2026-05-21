@@ -19,7 +19,16 @@ const routePrimaryColors = {
 const BootcampLayout = () => {
   const { t } = useTranslation();
   const location = useLocation();
-  const primaryColor = routePrimaryColors[location.pathname] || '#294CFF';
+  const footerKeyMap = {
+    '/bootcamps/web-dev-essentials': 'webDevFooterTagline',
+    '/bootcamps/ecommerce': 'ecomFooterTagline',
+    '/bootcamps/generative-ai-automation': 'genaiFooterTagline',
+    '/bootcamps/power-bi': 'pbiFooterTagline',
+    '/bootcamps/ui-ux-design': 'uiuxFooterTagline',
+    '/bootcamps/cybersecurity-bootcamp': 'cyberBootcampFooterTagline',
+    '/bootcamps/cybersecurity-introduction': 'cyberIntroFooterTagline',
+  };
+
   const [phone, setPhone] = useState('');
   const [submitted, setSubmitted] = useState(false);
   
@@ -88,7 +97,7 @@ const BootcampLayout = () => {
                 <img src="/logo.svg" alt="Code & Sens" className="h-9 filter brightness-0 invert" />
               </div>
               <p className="text-white/70 text-sm leading-relaxed">
-                {t('footerTagline', "Algeria's premier tech bootcamp. We turn beginners into job-ready developers in 12 weeks.")}
+                                 {t(footerKeyMap[location.pathname] || 'footerTagline', "Algeria's premier tech bootcamp. We turn beginners into job-ready developers in 12 weeks.")}
               </p>
             </div>
 
