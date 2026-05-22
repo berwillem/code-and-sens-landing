@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useOutletContext, useLocation } from 'react-router-dom';
 import i18n from '../../i18n/i18n';

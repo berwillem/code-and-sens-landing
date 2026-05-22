@@ -10,7 +10,6 @@ import flagDZ from '../assets/flags/algeria.png';
 const Navbar = ({ onOpenModal }) => {
   const { t, i18n } = useTranslation();
   const location = useLocation();
-  const [theme, setTheme] = useState({ bgClass: 'bg-slate-900/80', primaryHex: '#4F46E5', textClass: 'text-white' });
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -26,10 +25,7 @@ const Navbar = ({ onOpenModal }) => {
     '/bootcamps/web-dev-essentials':         { bgClass: 'bg-white/95',      primaryHex: '#294CFF', textClass: 'text-slate-900' },
   };
 
-  useEffect(() => {
-    const currentTheme = routeThemes[location.pathname] || { bgClass: 'bg-slate-900/80', primaryHex: '#4F46E5', textClass: 'text-white' };
-    setTheme(currentTheme);
-  }, [location.pathname]);
+  const theme = routeThemes[location.pathname] || { bgClass: 'bg-slate-900/80', primaryHex: '#4F46E5', textClass: 'text-white' };
 
   useEffect(() => {
     const handleOutsideClick = (event) => {

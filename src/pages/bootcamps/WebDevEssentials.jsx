@@ -111,7 +111,6 @@ const WebDevEssentials = () => {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '' });
 
   const containerRef = useRef(null);
-  const heroRef = useRef(null);
   const featuresRef = useRef(null);
   const curriculumRef = useRef(null);
 

@@ -29,6 +29,8 @@ const BootcampLayout = () => {
     '/bootcamps/cybersecurity-introduction': 'cyberIntroFooterTagline',
   };
 
+  const primaryColor = routePrimaryColors[location.pathname] || '#4F46E5';
+
   const [phone, setPhone] = useState('');
   const [submitted, setSubmitted] = useState(false);
   

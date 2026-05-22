@@ -11,13 +11,16 @@ const CheckIcon = () => (
 
 const ContactModal = ({ isOpen, onClose, primaryColor, customTitle, customCtaText }) => {
   const { t } = useTranslation();
-  const [isRendered, setIsRendered] = useState(false);
+  const [isRendered, setIsRendered] = useState(isOpen);
   const [formData, setFormData] = useState({ name: '', email: '', phone: '' });
   const isRtl = i18n.dir(i18n.language) === 'rtl';
 
+  if (isOpen && !isRendered) {
+    setIsRendered(true);
+  }
+
   useEffect(() => {
     if (isOpen) {
-      setIsRendered(true);
       document.body.style.overflow = 'hidden';
     } else {
       const timer = setTimeout(() => setIsRendered(false), 300);
