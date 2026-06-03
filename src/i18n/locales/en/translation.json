@@ -7,7 +7,7 @@
   "heroTitle1": "Master the",
   "heroHighlight": "Code.",
   "heroTitle2": "Build the Future.",
-  "heroSubtitle": "Intensive Web Development bootcamp designed for fast learning and high-impact careers. Go from zero to job-ready in 12 weeks.",
+  "heroSubtitle": "Intensive Web Development bootcamp designed for fast learning and high-impact careers. Go from zero to job-ready in 8 weeks (6h/week).",
   "heroCta1": "Start Learning",
   "heroCta2": "View Curriculum",
   "heroRating": "from 160+ graduates",
@@ -23,7 +23,7 @@
   "card3Desc": "Graduate with officially recognized certifications. Prove your skills with a strong portfolio of real-world projects and assessments.",
   "card3Cta": "See Certifications",
   "curriculumTitle": "Curriculum",
-  "curriculumSubtitle": "12 intensive weeks taking you from foundations to full-stack, job-ready engineer.",
+  "curriculumSubtitle": "8 intensive weeks (6h/week) taking you from foundations to job-ready engineer.",
   "curriculumCta": "Download Full Syllabus",
   "testimonialsTitle": "What our students say",
   "contactTitle": "Take the first step",
@@ -36,7 +36,7 @@
   "formEmail": "Email Address",
   "formPhone": "Phone Number",
   "formSubmit": "Send Request",
-  "footerTagline": "Algeria's premier tech bootcamp. We turn beginners into job-ready developers in 12 weeks.",
+  "footerTagline": "Algeria's premier tech bootcamp. We turn beginners into job-ready developers in 8 weeks (6h/week).",
     "webDevFooterTagline": "Algeria's premier tech bootcamp. We turn beginners into job-ready developers in 8 weeks.",
     "ecomFooterTagline": "Algeria's premier e-commerce bootcamp. We turn beginners into successful online entrepreneurs in 8 weeks.",
     "genaiFooterTagline": "Algeria's leading AI bootcamp. Transform beginners into AI automation experts in 5 weeks.",
@@ -55,7 +55,7 @@
   "freeAppointmentModalTitle": "Free Appointment with our Educational Consultants",
   "curriculumModules": [
     {
-      "week": "Weeks 1–3",
+      "week": "Weeks 1–2",
       "title": "Web Foundations & Git",
       "topics": [
         "Understanding how the Internet and Web work",
@@ -65,7 +65,7 @@
       ]
     },
     {
-      "week": "Weeks 4–6",
+      "week": "Weeks 3–4",
       "title": "Advanced CSS & Animations",
       "topics": [
         "The Box Model and CSS Selectors",
@@ -75,7 +75,7 @@
       ]
     },
     {
-      "week": "Weeks 7–9",
+      "week": "Weeks 5–6",
       "title": "Algorithms & JavaScript Logic",
       "topics": [
         "Understanding algorithms and programming logic",
@@ -85,7 +85,7 @@
       ]
     },
     {
-      "week": "Weeks 10–12",
+      "week": "Weeks 7–8",
       "title": "The DOM & Final Project",
       "topics": [
         "Understanding and manipulating the DOM",
@@ -386,6 +386,67 @@
         "Scaling campaigns, performance management and ad cost optimisation",
         "Business automation and passing to the next level of scale",
         "Final project: complete store, product launch and full marketing campaign"
+      ]
+    }
+  ],
+  "smmTag": "8-Week Program (6h/week) — Social Media Management",
+  "smmHeroTitle1": "Master",
+  "smmHeroHighlight": "Social Media",
+  "smmHeroTitle2": "Management.",
+  "smmHeroSubtitle": "Become a professional social media manager in 8 weeks. Learn to design strategies, run Ads campaigns, and engage online communities.",
+  "smmFeaturesTitle": "Everything you need to succeed in SMM",
+  "smmFeaturesSubtitle": "A hands-on program designed to turn you into a well-rounded social media expert.",
+  "smmCard1Subtitle": "Key Skill",
+  "smmCard1Title": "Strategy & Calendar",
+  "smmCard1Desc": "Define clear goals, build impactful editorial lines, and organize your projects efficiently using Canva and Notion.",
+  "smmCard2Title": "Meta Ads Campaigns",
+  "smmCard2Desc": "Run ad campaigns on Facebook & Instagram: target audiences, optimize budgets, and analyze performance data.",
+  "smmCard3Title": "Copywriting & Community",
+  "smmCard3Desc": "Write captivating social copy and manage your community by moderating interactions to boost engagement.",
+  "smmCard4Title": "Meta Business Suite & KPIs",
+  "smmCard4Desc": "Master professional tools to manage multiple pages and build performance reports using relevant key performance indicators.",
+  "smmTestimonialsTitle": "What our students say",
+  "smmCurriculumTitle": "8 Weeks to Master Social Media",
+  "smmCurriculumSubtitle": "From content strategy to paid ad campaigns — a comprehensive, 100% practical journey.",
+  "smmCurriculumCta": "Download Detailed Syllabus",
+  "smmContactSubtitle": "Ready to boost your social media presence? Leave us your details and an advisor will reach out within 24h.",
+  "smmContactCheck3": "Next SMM cohort — June 2026",
+  "smmFooterTagline": "Algeria's premier social media bootcamp. We turn beginners into Social Media Managers in 8 weeks.",
+  "smmCurriculumModules": [
+    {
+      "week": "Weeks 1–2",
+      "title": "Presence Strategy & Algorithms",
+      "topics": [
+        "Design a social media presence strategy aligned with a brand's marketing objectives",
+        "Develop a clear editorial line and build an effective content calendar",
+        "Understand social algorithms and adapt content to maximize organic reach"
+      ]
+    },
+    {
+      "week": "Weeks 3–4",
+      "title": "Visual Production & Copywriting",
+      "topics": [
+        "Produce high-impact visuals with Canva and organize projects with Notion",
+        "Apply copywriting principles for powerful and engaging social media posts",
+        "Writing techniques to capture attention in the first few seconds"
+      ]
+    },
+    {
+      "week": "Weeks 5–6",
+      "title": "Meta Ads Campaigns & Paid Advertising",
+      "topics": [
+        "Run Meta Ads campaigns (Facebook & Instagram): targeting, creation, optimization",
+        "Define custom and lookalike audiences for better reach",
+        "Analyze return on ad spend (ROAS) and optimize budgets"
+      ]
+    },
+    {
+      "week": "Weeks 7–8",
+      "title": "Community Management & Performance Reports",
+      "topics": [
+        "Master Meta Business Suite features to manage multiple pages and accounts",
+        "Manage an online community, moderate interactions, and boost engagement",
+        "Create performance reports with relevant key performance indicators (KPIs)"
       ]
     }
   ]

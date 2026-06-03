@@ -14,6 +14,7 @@ const routePrimaryColors = {
   '/bootcamps/ui-ux-design':               '#03BF1F',
   '/bootcamps/cybersecurity-bootcamp':     '#EF4444',
   '/bootcamps/cybersecurity-introduction': '#EF4444',
+  '/bootcamps/social-media-management':    '#FFA200',
 };
 
 const BootcampLayout = () => {
@@ -27,6 +28,7 @@ const BootcampLayout = () => {
     '/bootcamps/ui-ux-design': 'uiuxFooterTagline',
     '/bootcamps/cybersecurity-bootcamp': 'cyberBootcampFooterTagline',
     '/bootcamps/cybersecurity-introduction': 'cyberIntroFooterTagline',
+    '/bootcamps/social-media-management': 'smmFooterTagline',
   };
 
   const primaryColor = routePrimaryColors[location.pathname] || '#4F46E5';

@@ -26,6 +26,9 @@ export const submitToHubspot = async (data, pathname, pageName, t) => {
     training = pathname.includes("introduction") 
       ? "CyberStarter" 
       : "Cybersecurity Bootcamp";
+  } else if (pathname.includes("social-media-management")) {
+    category = "Digital Marketing";
+    training = "Social Media Management";
   }
 
   // Split name if only one field is provided, or use provided firstname/lastname
@@ -79,7 +82,7 @@ export const submitToHubspot = async (data, pathname, pageName, t) => {
 
     return true;
   } catch (error) {
-    console.error("HubSpot form error:", error);
+    console.error("HubSpot form error:", error.response?.data || error);
     Swal.fire({
       icon: "error",
       title: "Oups...",

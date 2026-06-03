@@ -10,6 +10,7 @@ import CybersecurityIntroduction from '../pages/bootcamps/CybersecurityIntroduct
 import PowerBI from '../pages/bootcamps/PowerBI';
 import UIUXDesign from '../pages/bootcamps/UIUXDesign';
 import WebDevEssentials from '../pages/bootcamps/WebDevEssentials';
+import SocialMediaManagement from '../pages/bootcamps/SocialMediaManagement';
 
 const AppRouter = () => {
   return (
@@ -24,6 +25,7 @@ const AppRouter = () => {
           <Route path="power-bi" element={<PowerBI />} />
           <Route path="ui-ux-design" element={<UIUXDesign />} />
           <Route path="web-dev-essentials" element={<WebDevEssentials />} />
+          <Route path="social-media-management" element={<SocialMediaManagement />} />
         </Route>
         
         {/* Redirect root to one of the bootcamps for now, or a generic home page if it existed */}

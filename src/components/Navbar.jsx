@@ -23,6 +23,7 @@ const Navbar = ({ onOpenModal }) => {
     '/bootcamps/power-bi':                   { bgClass: 'bg-white/95',      primaryHex: '#8C00FF', textClass: 'text-slate-900' },
     '/bootcamps/ui-ux-design':               { bgClass: 'bg-white/95',      primaryHex: '#03BF1F', textClass: 'text-slate-900' },
     '/bootcamps/web-dev-essentials':         { bgClass: 'bg-white/95',      primaryHex: '#294CFF', textClass: 'text-slate-900' },
+    '/bootcamps/social-media-management':    { bgClass: 'bg-white/95',      primaryHex: '#FFA200', textClass: 'text-slate-900' },
   };
 
   const theme = routeThemes[location.pathname] || { bgClass: 'bg-slate-900/80', primaryHex: '#4F46E5', textClass: 'text-white' };

@@ -7,7 +7,7 @@
   "heroTitle1": "Maîtrisez le",
   "heroHighlight": "Code.",
   "heroTitle2": "Construisez l'avenir.",
-  "heroSubtitle": "Bootcamp intensif de développement web conçu pour un apprentissage rapide et des carrières à fort impact. Devenez opérationnel en 12 semaines.",
+  "heroSubtitle": "Bootcamp intensif de développement web conçu pour un apprentissage rapide et des carrières à fort impact. Devenez opérationnel en 8 semaines (6h/semaine).",
   "heroCta1": "Commencer",
   "heroCta2": "Voir le programme",
   "heroRating": "plus de 160 diplômés",
@@ -23,7 +23,7 @@
   "card3Desc": "Obtenez des certifications officiellement reconnues. Prouvez vos compétences avec un portfolio solide.",
   "card3Cta": "Voir les certifications",
   "curriculumTitle": "Programme",
-  "curriculumSubtitle": "12 semaines intensives pour vous mener des fondamentaux à développeur full-stack prêt à l'emploi.",
+  "curriculumSubtitle": "8 semaines (6h/semaine) intensives pour vous mener des fondamentaux à développeur web prêt à l'emploi.",
   "curriculumCta": "Télécharger le syllabus",
   "testimonialsTitle": "Ce que disent nos étudiants",
   "contactTitle": "Faites le premier pas",
@@ -36,7 +36,7 @@
   "formEmail": "Adresse e-mail",
   "formPhone": "Numéro de téléphone",
   "formSubmit": "Envoyer la demande",
-  "footerTagline": "Le premier bootcamp tech d'Algérie. Nous transformons les débutants en développeurs prêts à l'emploi en 12 semaines.",
+  "footerTagline": "Le premier bootcamp tech d'Algérie. Nous transformons les débutants en développeurs prêts à l'emploi en 8 semaines (6h/semaine).",
     "webDevFooterTagline": "Le premier bootcamp tech d'Algérie. Nous transformons les débutants en développeurs prêts à l'emploi en 8 semaines.",
     "ecomFooterTagline": "Le premier bootcamp e-commerce d'Algérie. Nous transformons les débutants en entrepreneurs en ligne prospères en 8 semaines.",
     "genaiFooterTagline": "Le premier bootcamp IA d'Algérie. Nous transformons les débutants en experts en IA et automatisation en 5 semaines.",
@@ -55,7 +55,7 @@
   "freeAppointmentModalTitle": "Rendez-vous gratuit avec nos conseillers pédagogiques",
   "curriculumModules": [
     {
-      "week": "Semaines 1–3",
+      "week": "Semaines 1–2",
       "title": "Fondamentaux du Web & Git",
       "topics": [
         "Comprendre le fonctionnement d’Internet et du Web",
@@ -65,7 +65,7 @@
       ]
     },
     {
-      "week": "Semaines 4–6",
+      "week": "Semaines 3–4",
       "title": "CSS Avancé & Animations",
       "topics": [
         "Le Modèle de Boîte (Box Model) et Sélecteurs CSS",
@@ -75,7 +75,7 @@
       ]
     },
     {
-      "week": "Semaines 7–9",
+      "week": "Semaines 5–6",
       "title": "Algorithmique & Logique JS",
       "topics": [
         "Comprendre la logique de programmation & algorithmes",
@@ -85,7 +85,7 @@
       ]
     },
     {
-      "week": "Semaines 10–12",
+      "week": "Semaines 7–8",
       "title": "Le DOM & Projet Final",
       "topics": [
         "Comprendre et manipuler le DOM avec JS",
@@ -433,5 +433,67 @@
         "Projet final : boutique complète, lancement produit et campagne marketing"
       ]
     }
+  ],
+  "smmTag": "Programme 8 Semaines (6h/semaine) — Social Media Management",
+  "smmHeroTitle1": "Maîtrisez le",
+  "smmHeroHighlight": "Social Media",
+  "smmHeroTitle2": "Management.",
+  "smmHeroSubtitle": "Devenez un gestionnaire de réseaux sociaux professionnel en 8 semaines. Apprenez à concevoir une stratégie, piloter des campagnes Ads et animer des communautés.",
+  "smmFeaturesTitle": "Tout ce dont vous avez besoin pour réussir en SMM",
+  "smmFeaturesSubtitle": "Un programme pratique conçu pour faire de vous un expert complet des réseaux sociaux.",
+  "smmCard1Subtitle": "Compétence clé",
+  "smmCard1Title": "Stratégie & Calendrier",
+  "smmCard1Desc": "Définissez des objectifs clairs, créez des lignes éditoriales percutantes et organisez vos projets efficacement avec Canva et Notion.",
+  "smmCard2Title": "Campagnes Meta Ads",
+  "smmCard2Desc": "Piloter des campagnes publicitaires sur Facebook & Instagram : ciblage d'audience, optimisation du budget et analyse de performance.",
+  "smmCard3Title": "Copywriting & Communauté",
+  "smmCard3Desc": "Rédigez des publications captivantes et gérez votre communauté en modérant les interactions pour renforcer l'engagement.",
+  "smmCard4Title": "Meta Business Suite & KPIs",
+  "smmCard4Desc": "Maîtrisez les outils professionnels pour gérer plusieurs pages et créez des rapports de performance avec des indicateurs clés pertinents.",
+  "smmTestimonialsTitle": "Ce que disent nos étudiants",
+  "smmCurriculumTitle": "8 Semaines pour maîtriser le Social Media",
+  "smmCurriculumSubtitle": "De la stratégie de contenu aux campagnes publicitaires payantes — un parcours complet 100% pratique.",
+  "smmCurriculumCta": "Télécharger le programme détaillé",
+  "smmContactSubtitle": "Prêt à booster votre présence sur les réseaux sociaux ? Laissez-nous vos coordonnées et un conseiller vous contactera sous 24h.",
+  "smmContactCheck3": "Prochaine cohorte SMM — Juin 2026",
+  "smmFooterTagline": "Le premier bootcamp réseaux sociaux d'Algérie. Nous transformons les débutants en Social Media Managers en 8 semaines.",
+  "smmCurriculumModules": [
+    {
+      "week": "Semaines 1–2",
+      "title": "Stratégie de Présence & Algorithmes",
+      "topics": [
+        "Concevoir une stratégie de présence sur les réseaux sociaux en lien avec les objectifs marketing d’une marque",
+        "Élaborer une ligne éditoriale claire et créer un calendrier de contenu efficace",
+        "Comprendre les algorithmes sociaux et adapter votre contenu pour maximiser la portée organique"
+      ]
+    },
+    {
+      "week": "Semaines 3–4",
+      "title": "Production Visuelle & Copywriting",
+      "topics": [
+        "Produire des visuels impactants avec Canva et organiser vos projets avec Notion",
+        "Appliquer les principes du copywriting pour des publications percutantes",
+        "Techniques d'écriture pour captiver l'attention dès les premières secondes"
+      ]
+    },
+    {
+      "week": "Semaines 5–6",
+      "title": "Campagnes Meta Ads & Publicité Payante",
+      "topics": [
+        "Piloter des campagnes Meta Ads (Facebook & Instagram) : ciblage, création, optimisation",
+        "Définition d'audiences personnalisées et similaires (Lookalike)",
+        "Analyse du retour sur investissement publicitaire (ROAS)"
+      ]
+    },
+    {
+      "week": "Semaines 7–8",
+      "title": "Community Management & Rapports de Performance",
+      "topics": [
+        "Maîtriser les fonctionnalités de Meta Business Suite pour gérer plusieurs pages et comptes",
+        "Gérer une communauté en ligne, modérer les interactions et renforcer l’engagement",
+        "Créer des rapports de performance avec des indicateurs clés (KPI) pertinents"
+      ]
+    }
   ]
 }
+
